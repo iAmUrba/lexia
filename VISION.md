@@ -43,6 +43,15 @@ Servicios Cognitivos
 Infraestructura
 ```
 
+### Development Runtime vs Production Runtime
+
+Para mantener la abstracción y la velocidad de desarrollo, distinguimos claramente dos entornos:
+
+- **Development Runtime (Desarrollo):** Aquí utilizamos herramientas de terceros instaladas externamente (como Ollama, Python global, Node.js) para iterar rápido. Esto **NO** contradice nuestra arquitectura, simplemente acelera la creación de nuestra lógica de negocio (como el LexIA Reader).
+- **Production Runtime (Producción):** Para el usuario final, todo esto desaparece. Entregaremos un único ejecutable (`LexIA.exe`). Cualquier motor de IA, base de datos o runtime necesario vendrá embebido.
+
+**Regla de oro de la abstracción:** *Avanzamos hoy con herramientas maduras (Ollama), pero diseñamos las interfaces de nuestros Servicios Cognitivos para que el proveedor sea 100% intercambiable mañana sin tocar el dominio.*
+
 ---
 
 ## Los Servicios Cognitivos
