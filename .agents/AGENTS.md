@@ -13,3 +13,6 @@
 - **Sincronización de Código (GitHub):** 
   - Al iniciar cualquier sesión o recibir instrucciones iniciales, el agente DEBE ejecutar `git pull origin main --rebase` de forma proactiva para garantizar que se tiene el código más reciente de la PC Gamer u otras máquinas.
   - Después de realizar cambios, el agente debe ofrecerse a ejecutar `git add . && git commit -m "..." && git push origin main` para mantener las computadoras sincronizadas.
+
+# Aislamiento de Proyectos
+- **Regla Intocable (StickerVerse):** Las modificaciones, comandos y acciones realizadas en este proyecto (LexIA) **NUNCA** deben afectar, alterar o modificar en lo absoluto a ningún archivo, configuración o componente asociado al proyecto "StickerVerse Album App". Todo trabajo debe mantenerse estrictamente aislado dentro del contexto de LexIA.
