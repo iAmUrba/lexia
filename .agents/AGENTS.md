@@ -9,3 +9,7 @@
 - **Membretes Originales:** Todo documento exportado en `.docx` debe generarse utilizando las plantillas base originales del juzgado (ej. `MEMBRETE EN BLANCO.docx`) inyectando el contenido vía backend (Python u otros scripts), de forma que no se rompan ni reemplacen los encabezados, logos institucionales y pies de página.
 
 - **Arquitectura y Auto-arranque:** LexIA usa un único comando (`concurrently`) para levantar el frontend y el backend de forma simultánea. Este proceso se gestiona mediante el script `start_lexia.sh` y está configurado como un `LaunchAgent` en macOS para arrancar automáticamente al reiniciar la PC.
+
+- **Sincronización de Código (GitHub):** 
+  - Al iniciar cualquier sesión o recibir instrucciones iniciales, el agente DEBE ejecutar `git pull origin main --rebase` de forma proactiva para garantizar que se tiene el código más reciente de la PC Gamer u otras máquinas.
+  - Después de realizar cambios, el agente debe ofrecerse a ejecutar `git add . && git commit -m "..." && git push origin main` para mantener las computadoras sincronizadas.

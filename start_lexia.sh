@@ -9,6 +9,11 @@ cd /Users/lacalma/.gemini/antigravity/scratch/LexIA/src/lexia-os
 
 echo "Iniciando LexIA a las $(date)" >> ../../lexia_autostart.log
 
+# Auto-sincronización con GitHub
+cd ..
+git pull origin main --rebase >> ../lexia_autostart.log 2>&1
+cd src/lexia-os
+
 # Matar procesos existentes en los puertos 3000 y 3001
 lsof -ti:3000 | xargs kill -9 2>/dev/null
 lsof -ti:3001 | xargs kill -9 2>/dev/null
