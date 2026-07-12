@@ -1,0 +1,9 @@
+{
+  "name": "@lexia/domain",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "type": "module",
+  "dependencies": {
+    "@lexia/shared": "*"
+  }
+}

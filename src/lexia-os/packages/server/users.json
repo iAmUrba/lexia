@@ -1,0 +1,24 @@
+[
+  {
+    "username": "santiagoburbano",
+    "password": "8914",
+    "nombre_completo": "SANTIAGO NICOLAS BURBANO TAMAYO",
+    "cargo": "JUDICANTE",
+    "despacho": "Juzgado Tercero Penal del Circuito Especializado con funciones de conocimiento de Popayán",
+    "ciudad": "Popayán-Cauca",
+    "firmaUrl": "https://i.imgur.com/3q1q5zL.png",
+    "rol": "admin",
+    "despacho_id": "juzgado_3_especializado"
+  },
+  {
+    "username": "juzgado1",
+    "password": "123",
+    "nombre_completo": "MARIA PEREZ GOMEZ",
+    "cargo": "JUEZA",
+    "despacho": "Juzgado Primero Penal Municipal",
+    "ciudad": "Cali-Valle",
+    "firmaUrl": "",
+    "rol": "user",
+    "despacho_id": "juzgado_1_municipal"
+  }
+]

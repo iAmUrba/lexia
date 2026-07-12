@@ -1,0 +1,2312 @@
+[
+  {
+    "id": "evt_0",
+    "datetime": "2026-01-19T08:30:00",
+    "description": "ACUSACIÓN - PRECLUSIÓN CARLOS ALBERTO GOMEZ VARGAS – SE ABRE AUDIOS NO SE HACE PTE MISION TRABAJO FISCALIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_1",
+    "datetime": "2026-01-19T10:30:00",
+    "description": "ACUSACIÓN - GUSTAVO ANTONIO VARELA TORRES – SE ABRE AUDIO Y NO SE HACE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_2",
+    "datetime": "2026-01-19T14:00:00",
+    "description": "ACUSACION – MAYCOL CAMILO GARCIA TORO Y BEATRIZ HELENA TORO ORREGO – APLAZA LA FISCALIA POR CRUCE, FUE CITADA A OTRA DILIGENCIA CON ANTICIPACIÓN",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_3",
+    "datetime": "2026-01-19T15:30:00",
+    "description": "ACUSACIÓN- NESTOR ARTURO GOMEZ CUATINDIOY JOHN JAIRO ARTEAGA ARCINIEGAS – APLAZA LA DEFENSA INCAPACITADO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_4",
+    "datetime": "2026-01-20T08:30:00",
+    "description": "ACUSACION KEVIN DAVID PULGARIN RUIZ – APLAZA LA FISCALIA PENDIENTE EMP",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_5",
+    "datetime": "2026-01-20T10:30:00",
+    "description": "PREPARATORIA – JOSE IBIS MICHELINO IBARBO – APLAZA EL PROCESADO NO HA PODIDO CONVERSAR CON LA DEFENSORA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_6",
+    "datetime": "2026-01-20T14:00:00",
+    "description": "PREPARATORIA – JOSE MELBE ERAZO – APLAZA LA FISCALÍA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_7",
+    "datetime": "2026-01-20T15:30:00",
+    "description": "JUICIO ORAL CRISTIAN ESTEBAN ORDOÑEZ OTAYA – APLAZA LA FISCALÍA POR CRUCE FALTA TODO  OJO PRONTO A PRESCRIBIR* NO SE PUEDE APLAZAR 21 VENCE TERMINOS NO RECURRENTE ROMAN LEANDRO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_8",
+    "datetime": "2026-01-20T08:30:00",
+    "description": "JUICIO ORAL – ALVARO JESUS MONCAYO – APLAZA LA DEFENSA PROCESADO INTERNADO 10:30",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_9",
+    "datetime": "2026-01-20T14:00:00",
+    "description": "JUICIO ORAL – YEFERSON MUÑOZ CANO – APLAZA LA DEFENSA ESTA INCAPACITADO 3:30",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_10",
+    "datetime": "2026-01-22T08:30:00",
+    "description": "JUICIO ORAL – JHON MILLER LOPEZ MARTINEZ – APLAZA LA DEFENSA PALTA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_11",
+    "datetime": "2026-01-22T11:00:00",
+    "description": "ACUSACION - PREACUERDO JUAN PABLO BASTIDAS – APLAZA LA DEFENSAPTE INTERROGATORIO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_12",
+    "datetime": "2026-01-22T14:00:00",
+    "description": "JUICIO ORAL - EDGAR QUITUMBO PEÑA - SE RECIBE UN TESTIGO 3:30 VENCE TERMINOS NO RECURRENTES MANUEL OTALVARO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_13",
+    "datetime": "2026-01-23T08:30:00",
+    "description": "PREPARATORIA YEDICKSON ALEJANDRO CALDERA CASTRO – FALTA TODO  ESTA NO, ESTA EN ESTRADOS PARA 28 ENERO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_14",
+    "datetime": "2026-01-23T10:30:00",
+    "description": "ACUSACION WILDER QUIGUANAS CHAGUENDO APLAZA LA FISCALÍA PTE EMP 02:00 3:30",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_15",
+    "datetime": "2026-01-26T08:30:00",
+    "description": "PREPARATORIA- JERSON DAVID RODRIGUEZ ORTIZ, JOSE LUIS GUAIPO DIAZ, MAYCOL ANDRES MARIN MURILLO – APLAZA LA DEFENSA PALTA PORCRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_16",
+    "datetime": "2026-01-26T10:30:00",
+    "description": "INCIDENTE DE REPARACION INTEGRAL – JAMES EMILIANO PACUE FERNANDEZ – SE ABRE AUDIO NO SE HACE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_17",
+    "datetime": "2026-01-26T14:00:00",
+    "description": "ACUSACION RODRIGO ALBEAR SAMBONI – APLAZA LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_18",
+    "datetime": "2026-01-26T15:30:00",
+    "description": "PREPARATORIA- GABRIEL DAGUA CAMPO – NO SE HACE PTE ACLARACIONES DE LA FISCALÍA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_19",
+    "datetime": "2026-01-27T08:30:00",
+    "description": "JUICIO ORAL EUTIMIO MANUEL CAMARGO ORTIZ – SE HACE SE RECIBEN 2 TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_20",
+    "datetime": "2026-01-27T10:30:00",
+    "description": "ACUSACION - NELLY JOHANA MEJÍA DAZA Y GONZALO ALBEIRO ROSALES – APLAZA LA FISCALIA COMISION DE SERVICIOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_21",
+    "datetime": "2026-01-27T14:00:00",
+    "description": "ACUSACION OSCAR DAYAN LUCUMI VASQUEZ APLAZA LA DEFENSA PTE HABLAR CON FISCALÍA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_22",
+    "datetime": "2026-01-27T15:30:00",
+    "description": "447 – FELIPE ZEMANATE ERAZO – APLAZA LA FISCALIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_23",
+    "datetime": "2026-01-28T08:30:00",
+    "description": "PREPARATORIA YEDICKSON ALEJANDRO CALDERA CASTRO – APLAZA LA EL FISCAL POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_24",
+    "datetime": "2026-01-28T10:30:00",
+    "description": "PREPARATORIA – DIDIER ALEJANDRO ORDOÑEZ ÑAÑEZ - APLAZA EL PROCESADO SOLICITA TIEMPO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_25",
+    "datetime": "2026-01-28T14:00:00",
+    "description": "JUICIO ORAL – JESUS ARNULFO ENRIQUEZ ARAUJO Y OTROS – APLAZA LA DEFENSA REUNION FISCALÍA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_26",
+    "datetime": "2026-01-29T08:30:00",
+    "description": "JUICIO ORAL PRESENCIAL TOM DEIVY CARDONA CRUZ – APLAZA LA FISCALÍA APENAS ASUME EL CASO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_27",
+    "datetime": "2026-01-29T11:00:00",
+    "description": "ACUSACIÓN – PRECLUSIÓN AURA SAMBONI MEDINA – APLAZA LA FISCALIA PTE EMP",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_28",
+    "datetime": "2026-01-29T14:00:00",
+    "description": "PREPARATORIA O PREACUERDO -JOSE ENRIQUE POVEDA Y EDUAR ANUAR MENESES CUATIN Y OTROS – APLAZA LA FISCALIA INCAPACITADA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_29",
+    "datetime": "2026-01-29T15:30:00",
+    "description": "PREACUERDO ELINA ISABEL MELENDEZ FAJARDO  - APLAZA LA FISCALIA INPACITADA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_30",
+    "datetime": "2026-01-30T08:30:00",
+    "description": "PREPARATORIA – BRAINER ORLANDO DAZA Y SEBASTIAN MESTIZO DAZA – APLAZA LA FISCALIA POR CITACION DE LA DIRECCION 10:30",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_31",
+    "datetime": "2026-02-02T10:30:00",
+    "description": "CONTINUACIÓN PREACUERDO DIEGO FERNANDO FERNANDEZ DAZA - YESSICA MARIA ASTAIZA HERNANDEZ - JORGE EDUARDO ERASO HINESTROZA - BAYRON JOHAN ESPINOSA - ITAN SMIT VIDAL CERON - ROBERTH ALEXANDER SOLARTE ROSALES - JESUS FELIPE VELASCO CASTRO - VICTOR HUGO CHACON HERNANDEZ - DANNY ALEJANDRO VELASCO ESCOBAR - EDINSON MAURICIO PUYO TORRES - MARIA ELENA GUERRERO CAICEDO – SE APLAZA POR QUE NO SE TIENEN LOS EMP APENAS LLEGAN HOY",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_32",
+    "datetime": "2026-02-02T14:00:00",
+    "description": "AUDIENCIA FORMULACION CARGOS LUIS ENRIQUE MEDINA ALEAN FALTA TODO (LEY 600) -APLAZA EL DESPACHO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_33",
+    "datetime": "2026-02-03T08:30:00",
+    "description": "JUICIO ORAL RICHAR SANCHEZ JARAMILLO – SE REPROGRAMA POR EL DESPACHO EL SR JUEZ EN CITA MÉDICA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_34",
+    "datetime": "2026-02-03T14:00:00",
+    "description": "PREPARATORIA JEAN CARLOS CARABALI MINA - ELIAS DANIEL ROMERO SALCEDO - DUBAN BARRIOS RESTREPO - LUIS ENRIQUE DIAZ RODRIGUEZ – SE ABRE AUDIO Y NO SE HACE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_35",
+    "datetime": "2026-02-03T15:30:00",
+    "description": "ACUSACION - PREACUERDO MAICO VALENCIA GARCIA – APLAZA LA DEFENSA PTE SOCIALIZAR PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_36",
+    "datetime": "2026-02-04T08:30:00",
+    "description": "JUICIO ORAL – CARLOS EDUARDO VELASCO SARRIA - APLAZA FISCAL NUEVO NO CUENTA CON LA CARPETA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_37",
+    "datetime": "2026-02-04T11:00:00",
+    "description": "ACUSACION -PREACUERDO YEISON FERNEY GALVIS ORTIZ - EDWAR CASTRO PAZ - MAICOL DANIEL GUIRONZA HOYOS - HECTOR FABIO RIASCOS ARBOLEDA – SE ORDENA REMISION POR COMPOTENCIA Y SE DECLARA PRECLUSION A YEISON FERNEY GALVIS ORTIZ",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_38",
+    "datetime": "2026-02-04T14:00:00",
+    "description": "JUICIO ORAL – LUIS JAMER DAZA BURBANO – APLAZA LA DEFENSA POR INCAPACIDAD",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_39",
+    "datetime": "2026-02-04T16:00:00",
+    "description": "ACUSACION - PREACUERDO FABIO NELSON BAICUE YATACUE – SE ACUSA",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_40",
+    "datetime": "2026-02-05T08:30:00",
+    "description": "JUICIO ORAL – MIGUEL VIRGILIO OROZCO TROMPETA APODERADO NUEVO PARA EL– FALTA TODO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_41",
+    "datetime": "2026-02-05T11:00:00",
+    "description": "ACUSACION – PREACUERDO MIGUEL ANGEL ORTEGA CONTRERAS  - APLAZA LA FISCALIA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_42",
+    "datetime": "2026-02-05T14:00:00",
+    "description": "PREACUERDO CESAR EDUARDO MUÑOZ ORDOÑEZ, DIEGO ARMANDO ROJAS MUÑOZ, GERARDO ENRIQUE RAMIREZ MEDINA, EIBER DARIO RUIZ BURBANO Y JHONNY LEANDRO SINISTERRA – APLAZA LA FISCALIA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_43",
+    "datetime": "2026-02-05T15:30:00",
+    "description": "ACUSACION - PREACUERDO LUIS ALBERTO DUQUE SANCHEZ - JOHN FREDDY AYALA GOMEZ – NO SE HACE SE TRASLADO A LUIS ALBERTO A VILLA HERMOSA AYER",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_44",
+    "datetime": "2026-02-06T08:30:00",
+    "description": "FORMULACION DE ACUSACION JOSE EZEQUIEL VERA VERA - JHON JAIRO MEJIA GONZALEZ - JHON JAIRO OSNAS RIVERA - JOAN DANILO CARABALI DIAZ - ANDREINA ALEJANDRA GUZMAN RAMOS FALTA TODO SE ABRE AUDIO LOS DEFENSORES DE MANERA CONJUNTA APLAZAN",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_45",
+    "datetime": "2026-02-06T10:30:00",
+    "description": "PRECLUSION MIGUEL MULATO COLLAZOS FALTA TODO SE HACE, SE PRECLUYE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_46",
+    "datetime": "2026-02-09T08:30:00",
+    "description": "ACUSACIÓN – PREACUERDO MIYER DUVAN PAZ CAICEDO, YEISON DANIEL MONTENEGRO OROZCO, OSCAR EDUARDO URREA VERGARA Y JORGE IVAN SOLARTE AGUIRRE – APLAZA LA FISCAL INCAPACITADA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_47",
+    "datetime": "2026-02-09T10:30:00",
+    "description": "PREACUERDO ACUSACION – HOLMAN DANIEL GARCES LEDEZMA – APLAZA LA FISCALIA INCAPACITADA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_48",
+    "datetime": "2026-02-09T14:00:00",
+    "description": "PREPARATORIA – PREACUERDO YHON JAIRO BASTO  - SE ABRE AUDIO Y SOLICITA CONEXIDAD SE SUSPENDE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_49",
+    "datetime": "2026-02-10T08:30:00",
+    "description": "CONTINUACIÓN PREPARATORIA – CRISTIAN DAVID YONDA CAMPO – APLAZA LA FISCALÍA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_50",
+    "datetime": "2026-02-10T10:30:00",
+    "description": "ACUSACIÓN - JULIO FAVIO MERA PORTILLO – APLAZA LA FISCALÍA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_51",
+    "datetime": "2026-02-10T14:00:00",
+    "description": "JUICIO ORAL – KARIME ANDREA RAMOS SE RECIBEN 2 TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_52",
+    "datetime": "2026-02-11T08:30:00",
+    "description": "JUICIO ORAL – EDINSON CAVIEDES MARTINEZ – APLAZA LA DEFENSA BUSCA UN PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_53",
+    "datetime": "2026-02-11T11:00:00",
+    "description": "PREACUERDO JUAN DAVID CARDONA ARARAT – SE VERBALIZA EL PREACUERDO Y SE VERIFICA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_54",
+    "datetime": "2026-02-11T14:00:00",
+    "description": "ACUSACIÓN - PRECLUSIÓN - JON JAIRO MUTIS IDROBO – NO SE HACE FISCALÍA PENDIENTE EMP",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_55",
+    "datetime": "2026-02-11T15:30:00",
+    "description": "PREACUERDO WERNEY RAMIREZ ORTIZ  - APLAZA LA DEFENSA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_56",
+    "datetime": "2026-02-12T08:30:00",
+    "description": "PREPARATORIA -PREACUERDO JERSON YAMID ALDANA OLIVAR – SE ABRE AUDIO NO SE HACE EL PROCESADO NO ACEPTA EL PREACUERDO 10:30",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_57",
+    "datetime": "2026-02-12T14:00:00",
+    "description": "JUICIO ORAL ESTEBAN DANILO SALGADO - APLAZA LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_58",
+    "datetime": "2026-02-13T08:30:00",
+    "description": "ACUSACION SIXTO JAIRO VALLEJO ANDRADE -  JOSE BLADIMIR RIASCOS RIASCOS - CAMILO ALEXANDER CORDOBA FERNANDEZ - JONATHAN ARBEY CIFUENTES ROSERO - LEIDY YINETH TENORIO GOMEZ - YESID LOPEZ GOMEZ - PAOLA ANDREA CIFUENTES LOPEZ – APLAZA DEFENSA ROBINSON LUNA PTE UN PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_59",
+    "datetime": "2026-02-13T10:30:00",
+    "description": "CONTINUACIÓN PREACUERDO JUAN DAVID CARDONA ARARAT – SE APRUEBA EL PREACUERDO Y SE HACE 447 Y SENTENCIA 001",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_60",
+    "datetime": "2026-02-16T08:30:00",
+    "description": "ACUSACION LUIS ALFREDO ALFONSO HUERTAS -  YEIMER YAIR ALVAREZ CASTRO -  JOSE HERMINIO MOSQUERA ANDRADE - ELBERT RODRIGUEZ MIRANDA – SE ABRE AUDIO NO SE HACE – SE CRUZA CON AUDIENCIA DE UN DEFENSOR",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_61",
+    "datetime": "2026-02-16T10:30:00",
+    "description": "ACUSACIÓN - PREACUERDO ELIANA ISABEL MELENDEZ FAJARDO SE ABRE AUDIO Y NO SE HACE PTE MISION DE TRABAJO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_62",
+    "datetime": "2026-02-16T16:00:00",
+    "description": "VISITA VIRTUAL – CONSEJO SECCIONAL DE LA JUDICATURA Y DIRECTORA DESAJ *OJO*",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_63",
+    "datetime": "2026-02-17T08:30:00",
+    "description": "PREPARATORIA – EDGAR SILVIO MUÑOZ ORTIZ, KEVIN ESTEBAN BENAVIDES VALLEJO, REIMON YOVANNY VIVAS MONTILLA – SE ABRE AUDIOS SE REPROGRAMA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_64",
+    "datetime": "2026-02-17T11:00:00",
+    "description": "ACUSACION KERLY TATIANA LEON MEDINA - APLAZA LA DEFENSA BUSCA UN PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_65",
+    "datetime": "2026-02-17T14:00:00",
+    "description": "JUICIO ORAL – YESICA MARCELA OSNAS RIVERA   - LA DEFENSA NO COMPARECE SE ORDENA REQUERIRLA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_66",
+    "datetime": "2026-02-18T08:30:00",
+    "description": "JUICIO ORAL – MIREYA MORALES ORDOÑEZ Y JESUS ALDEMAR ORTEGA BRAVO – APLAZA LA FISCALÍA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_67",
+    "datetime": "2026-02-18T10:30:00",
+    "description": "INCIDENTE REPARACIÓN JAMES EMILIANO PACUE FERNANDEZ – SE ABRE AUDIOS Y SE REPROGRAMA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_68",
+    "datetime": "2026-02-18T14:00:00",
+    "description": "JUICIO ORAL – JESUS ADRIAN VARGAS GONZALEZ – APLAZA LA FISCALIA NO UBICÓ LOS TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_69",
+    "datetime": "2026-02-19T08:30:00",
+    "description": "JUICIO ORAL – SEBASTIAN ARARAT NUÑEZ - ESTRADOS – APLAZA LA DEFENSA NO ENCONTRÓ LA TESTIGO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_70",
+    "datetime": "2026-02-19T11:00:00",
+    "description": "ACUSACIÓN WILDER QUIGUANAS CHAGENDO - APLAZA LA DEFENSA BUSCA PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_71",
+    "datetime": "2026-02-19T14:00:00",
+    "description": "JUICIO ORAL – HECTOR FABIO BETANCOURT CALAMBAS Y JOAN FERNANDO BETANCOURT LOPEZ – APLAZA LA DEF NIDIA SANTIAGO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_72",
+    "datetime": "2026-02-20T08:30:00",
+    "description": "JUICIO ORAL ALEGATOS – JUAN CARLOS AGRONO CAICEDO – APLAZA LA FISCALÍA PRO CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_73",
+    "datetime": "2026-02-20T11:00:00",
+    "description": "ACUSACIÓN JUAN PABLO BASTIDAS FALTA TODO – NO CONECTAN AL PPL EN L CARCEL",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_74",
+    "datetime": "2026-02-23T08:30:00",
+    "description": "JUICIO ORAL  -ALEXANDER LEAL MARTINEZ Y OTROS – APLAZA LA FISCALIA POR INCAPACIDAD",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_75",
+    "datetime": "2026-02-23T14:00:00",
+    "description": "PREPARATORIA JOSE MELBE ERAZO NARVAEZ APLAZA EL DEFENSOR POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_76",
+    "datetime": "2026-02-23T16:00:00",
+    "description": "JUICIO ORAL ALEGATOS – JUAN CARLOS AGRONO CAICEDO – FISCAL INCAPACITADO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_77",
+    "datetime": "2026-02-24T08:30:00",
+    "description": "JUICIO ORAL - EDGAR QUITUMBO PEÑA - APLAZA LA DEFENSA TIENE UN VIAJE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_78",
+    "datetime": "2026-02-24T14:00:00",
+    "description": "JUICIO ORAL ALVARO JESUS MONCAYO HERRERA APLAZA LA FISCALÍA POR DILIGENCIA  3 830: LECTURA DE SENTENCIA – JUAN FERNANDO HERNANDEZ HURTADO – APLAZA EL DESPACHO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_79",
+    "datetime": "2026-02-25T14:00:00",
+    "description": "PREPARATORIA - PREACUERDO JOSE ENRIQUE POVEDA, EDIER ANUAR MENESES, EDWIN ARBEY POVEDA, JEISON ANDREY POVEDA DIAZ APLAZA LA FISCAL POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_80",
+    "datetime": "2026-02-26T08:30:00",
+    "description": "ACUSACION JEAN CARLOS ALVAREZ MORA APLAZA LA DEFENSA NUEVO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_81",
+    "datetime": "2026-02-26T14:00:00",
+    "description": "PREACUERDO JUAN ESTEBAN ORTIZ GARZON - DIEGO FRANCISCO ORTIZ GARZON SE APRUEBA EL PREACUERDO Y SE REPROGRAMA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_82",
+    "datetime": "2026-02-27T08:30:00",
+    "description": "PREPARATORIA GABRIEL DAGUA CAMPO APLAZA LA FISCALIA POR CRUCE 2  RECORDAR QUE EN EL 2026 NO HAY QUE FIJAR  FECHA DE AUDIENCIAS EN LA SEMANA POSTERIOR A 8 DE MARZO Y 26 DE MAYO POR ELECCIONES TURNO HABEAS CORPUS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_83",
+    "datetime": "2026-03-27T08:30:00",
+    "description": "ACUSACION CAROLINA STELLA BEDOYA MORALES - HOOVER NAZARIT POPO SE ABRE AUDIO Y SE REPROGRAMA LA DEFENSA BUSCA EMP PARA PRECLUSION 1030- ACUSACION - PREACUERDO MAICO VALENCIA GARCIA – APLAZA LA DEFENSA PENDIENTE AJUSTAR PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_84",
+    "datetime": "2026-03-27T14:00:00",
+    "description": "ACUSACION - NELLY JOHANA MEJÍA DAZA Y GONZALO ALBEIRO ROSALES – APLAZA LA DEFENSA PTE EMP",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_85",
+    "datetime": "2026-03-27T15:30:00",
+    "description": "PREPARATORIA – JOSE IBIS MICHELINO IBARBO – APLAZA LA DEFENSA PTE DEFENSA TECNICA 03 TURNO HABEAS CORPUS 8:30 JUICIO ORAL RICHAR SANCHEZ JARAMILLO – SE RECIBE UN TESTIGO 02: 00 JUICIO ORAL - EUTIMIO MANUEL CAMARGO ORTIZ – SE RECIBE ULTIMO TESTIGO FISCALIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_86",
+    "datetime": "2026-03-27T16:00:00",
+    "description": "LECTURA SENTENCIA JUAN ESTEBAN ORTIZ GARZON - DIEGO FRANCISCO ORTIZ GARZON SE PROFIERE SENTENCIA NO 002",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_87",
+    "datetime": "2026-03-04T08:30:00",
+    "description": "PRECLUSION EDGAR HERNAN TENORIO MULCUE – SE HACE SUSPENDE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_88",
+    "datetime": "2026-03-04T10:30:00",
+    "description": "ACUSACION KAREN TATIANA YACUE CASOS –SE REMITE LA CARPETA AL J02 CONEXIDAD",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_89",
+    "datetime": "2026-03-04T14:00:00",
+    "description": "CONTINUACIÓN PREPARATORIA E INICIO DE JUICIO ORAL – FERNY YAFUE HILAMO – SE ABRE AUDIO Y SE SUSPENDE POR SOLICITUD DE LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_90",
+    "datetime": "2026-03-05T08:30:00",
+    "description": "JUICIO ORAL YEFFERSON MUÑOZ CANO APLAZAN LAS PARTES",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_91",
+    "datetime": "2026-03-05T10:30:00",
+    "description": "ACUSACIÓN NESTOR ARTURO GOMEZ CUATINDIOY, JOHN JAIRO ARTEAGA ARCINIEGA APLAZA LA DEFENSA INCAPACITADO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_92",
+    "datetime": "2026-03-05T14:00:00",
+    "description": "PREPARATORIA BRAINER ORLANDO DAZA Y SEBASTIAN MESTIZO DAZA SE ABRE AUDIO Y SE REPROGRAMA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_93",
+    "datetime": "2026-03-06T08:30:00",
+    "description": "JUICIO ORAL JHON MILLER LOPEZ MARTINEZ APLAZA EL DEFENSOR PALTA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_94",
+    "datetime": "2026-03-06T10:30:00",
+    "description": "PREACUERDO DANEIRO ENRIQUE VILLADA ROSERO SE APLAZA POR LA DEFENSA ESTA EN GARANTIAS 9 ESCRUTINIOS 10 ESCRUTINIOS 11 ESCRUTINIOS 12 ESCRUTINIOS 13 ESCRUTINIOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_95",
+    "datetime": "2026-03-16T08:30:00",
+    "description": "ACUSACION SIXTO JAIRO VALLEJO ANDRADE -  JOSE BLADIMIR RIASCOS RIASCOS - CAMILO ALEXANDER CORDOBA FERNANDEZ - JONATHAN ARBEY CIFUENTES ROSERO - LEIDY YINETH TENORIO GOMEZ - YESID LOPEZ GOMEZ - PAOLA ANDREA CIFUENTES LOPEZ – APLAZA LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_96",
+    "datetime": "2026-03-16T10:30:00",
+    "description": "PRECLUSION FRANKLIN NORBEY TUMBO CUETETUCO - SE PRECLUYÓ",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_97",
+    "datetime": "2026-03-16T14:00:00",
+    "description": "PREPARATORIA FABIO NELSON BAICUE YATA CUE –NO SE HIZO PORQUE NO SE CONECTARON",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_98",
+    "datetime": "2026-03-16T15:30:00",
+    "description": "ACUSACION – PREACUERDO MIGUEL ANGEL ORTEGA CONTRERAS – APLAZA LA FISCALIA POR CITA MEDICA 8:30 FORMULACION DE ACUSACION JOSE EZEQUIEL VERA VERA - JHON JAIRO MEJIA GONZALEZ - JHON JAIRO OSNAS RIVERA - JOAN DANILO CARABALI DIAZ - ANDREINA ALEJANDRA GUZMAN RAMOS SE VERIFICÓ PREACUERDO PTE RESOLVER",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_99",
+    "datetime": "2026-03-17T11:00:00",
+    "description": "ACUSACION – MAYCOL CAMILO GARCIA TORO Y BEATRIZ HELENA TORO ORREGO – APLAZA LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_100",
+    "datetime": "2026-03-17T14:00:00",
+    "description": "PREPARATORIA – PREACUERDO YHON JAIRO BASTO  - SE DECRETA CONEXIDAD CON OTROS ASUNTO SE REQUIERE EXPEDIENTES A LOS OTROS DESPACHOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_101",
+    "datetime": "2026-03-18T08:30:00",
+    "description": "CONTINUACIÓN PREACUERDO DIEGO FERNANDO FERNANDEZ DAZA - YESSICA MARIA ASTAIZA HERNANDEZ - JORGE EDUARDO ERASO HINESTROZA - BAYRON JOHAN ESPINOSA - ITAN SMIT VIDAL CERON - ROBERTH ALEXANDER SOLARTE ROSALES - JESUS FELIPE VELASCO CASTRO - VICTOR HUGO CHACON HERNANDEZ - DANNY ALEJANDRO VELASCO ESCOBAR - EDINSON MAURICIO PUYO TORRES - MARIA ELENA GUERRERO CAICEDO -  NO SE HACE LA PUERTA SE CERÓ POR EL SINDICATO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_102",
+    "datetime": "2026-03-18T14:00:00",
+    "description": "LECTURA DE SENTENCIA - ALISSETE JOANNA RUIZ CHINDICUE - YULI PATRICIA RUIZ CHINDICUE - NICHOL DAYANA BOLAÑOS RUIZ - LUIS DAVID HOYOS PARADA - MAICOL STEVEN RUIZ CHINDICUE - YOJAN ARLEY MENESES HOYOS - JHEFERSON ARLEY MANQUILLO SOLANO – SE PROFIERE SENTENCIA NO 003",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_103",
+    "datetime": "2026-03-19T08:30:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – KARIME ANDREA RAMOS- ESTRADOS PTE REMISION Y MIN PÚBLICO - APLAZA LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_104",
+    "datetime": "2026-03-19T11:00:00",
+    "description": "ACUSACION RODRIGO ALBEAR SAMBONI – APLAZA LA DEFENSA PTE DICTAMEN MÉDICO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_105",
+    "datetime": "2026-03-19T14:00:00",
+    "description": "- JUICIO ORAL CRISTIAN ESTEBAN ORDOÑEZ OTAYA – APLAZA LA DEFESA DEBE ASISTIR AL PROGRAMA AURORA DE LA DEFENSORIA  EL 19 Y 20 MARZO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_106",
+    "datetime": "2026-03-20T08:30:00",
+    "description": "ACUSACION - OSCAR DAYAN LUCUMI VASQUEZ – SE ACUSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_107",
+    "datetime": "2026-03-20T10:30:00",
+    "description": "-PREPARATORIA JEAN CARLOS CARABALI MINA - ELIAS DANIEL ROMERO SALCEDO - DUBAN BARRIOS RESTREPO - LUIS ENRIQUE DIAZ RODRIGUEZ – NO SE CONECTA EL DEFENSOR GONZALO PALTA 23 FESTIVO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_108",
+    "datetime": "2026-03-24T08:30:00",
+    "description": "ACUSACIÓN - GUSTAVO ANTONIO VARELA TORRES – SE ABRE AUDIO Y NOS E HACE FISCALIA APLAZA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_109",
+    "datetime": "2026-03-24T10:30:00",
+    "description": "ACUSACIÓN – PREACUERDO MIYER DUVAN PAZ CAICEDO, YEISON DANIEL MONTENEGRO OROZCO, OSCAR EDUARDO URREA VERGARA Y JORGE IVAN SOLARTE AGUIRRE – SE ABRE AUDIO Y NO SE HACE PORQUE NO SE CONECTA UN PPL",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_110",
+    "datetime": "2026-03-24T14:00:00",
+    "description": "JUICIO ORAL – CARLOS EDUARDO VELASCO SARRIA – FISCAL SUSPENDE PTE CONTACTAR TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_111",
+    "datetime": "2026-03-25T08:30:00",
+    "description": "PREPARATORIA- JERSON YAMID ALDANA OLIVAR – SE DECRETAN PRUEBAS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_112",
+    "datetime": "2026-03-25T14:00:00",
+    "description": "PREPARATORIA YEDICKSON ALEJANDRO CALDERA CASTRO – APLAZA LA DEFENSA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_113",
+    "datetime": "2026-03-25T15:30:00",
+    "description": "ACUSACION KEVIN DAVID PULGARIN RUIZ –APLAZA LA DEFENSA PENDIENTE RECOPILAR EMP",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_114",
+    "datetime": "2026-03-26T08:30:00",
+    "description": "JUICIO ORAL – LUIS JAMER DAZA BURBANO – APLAZA LA DEFENSA PTE RECIBIR MEDICINA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_115",
+    "datetime": "2026-03-26T11:00:00",
+    "description": "PREACUERDO ACUSACION – HOLMAN DANIEL GARCES LEDEZMA – APLAZA LA FISCALIA PTE ESTUDIAR EMP DEL PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_116",
+    "datetime": "2026-03-26T14:00:00",
+    "description": "PREPARATORIA- JERSON DAVID RODRIGUEZ ORTIZ, JOSE LUIS GUAIPO DIAZ, MAYCOL ANDRES MARIN MURILLO – FAPLAZA LA FISCAL POR CRUCE 04:00 LECTURA DE SENTENCIA HEILEN KAROLINA DAZA BOLAÑOS - SE PROFIERE SENTENCIA NO  04",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_117",
+    "datetime": "2026-03-27T08:30:00",
+    "description": "ACUSACIÓN – PRECLUSIÓN AURA SAMBONI MEDINA – SE PRECLUYE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_118",
+    "datetime": "2026-03-27T10:00:00",
+    "description": "ACUSACION JAVIER DAVID COLLAZOS ANGULO - SE ACUSA SEMANA SANTA SEMANA SANTA 1 SEMANA SANTA 2 SEMANA SANTA 3 SEMANA SANTA 6",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_119",
+    "datetime": "2026-04-31T08:30:00",
+    "description": "ACUSACIÓN - JULIO FAVIO MERA PORTILLO – APLAZA LA FISCALIA ESTA DE PERMISO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_120",
+    "datetime": "2026-04-31T10:30:00",
+    "description": "PREPARATORIA – DIDIER ALEJANDRO ORDOÑEZ ÑAÑEZ - APLAZA LA DEFNSA PREPARA EL CASO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_121",
+    "datetime": "2026-04-31T14:00:00",
+    "description": "PREACUERDO - CESAR EDUARDO MUÑOZ ORDOÑEZ, DIEGO ARMANDO ROJAS MUÑOZ, GERARDO ENRIQUE RAMIREZ MEDINA, EIBER DARIO RUIZ BURBANO Y JHONNY LEANDRO SINISTERRA – APLAZA LA FISCALIA ESTA DE PERMISO 7",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_122",
+    "datetime": "2026-04-31T08:30:00",
+    "description": "ACUSACIÓN - PRECLUSIÓN CARLOS ALBERTO GOMEZ VARGAS – LA FISCAL ESTA INCAPACITADA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_123",
+    "datetime": "2026-04-31T10:30:00",
+    "description": "CONTINUACIÓN PREPARATORIA – CRISTIAN DAVID YONDA CAMPO – SE ABRE AUDIO Y NO SE HACE PTE DESCUBRIMIENTO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_124",
+    "datetime": "2026-04-31T14:00:00",
+    "description": "- PREACUERDO ARLEY MAURICIO RUIZ TORRES APLAZA LA FISCALIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_125",
+    "datetime": "2026-04-31T15:30:00",
+    "description": "ACUSACION JEAN CARLOS ALVAREZ MORA – SE APRUEBA PREACUERDO SE HACE 447 Y SE PROFIERE SENTENCIA NO 5 8",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_126",
+    "datetime": "2026-04-31T08:30:00",
+    "description": "- JUICIO ORAL – MIGUEL VIRGILIO OROZCO TROMPETA SE RECIBEN 2 TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_127",
+    "datetime": "2026-04-31T14:00:00",
+    "description": "ACUSACIÓN - LUIS ALFREDO ALFONSO HUERTAS -  YEIMER YAIR ALVAREZ CASTRO -  JOSE HERMINIO MOSQUERA ANDRADE - ELBERT RODRIGUEZ MIRANDA – SE ABRE AUDIO Y SE REPROGRAMA 9",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_128",
+    "datetime": "2026-04-31T08:30:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – JESUS ARNULFO ENRIQUEZ ARAUJO Y OTROS – SE RECIBEN TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_129",
+    "datetime": "2026-04-31T14:00:00",
+    "description": "CONT. PRECLUSION EDGAR HERNAN TENORIO MULCUE – APLAZA EL DESPACHO POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_130",
+    "datetime": "2026-04-31T15:30:00",
+    "description": "PRECLUSION ELMER ADRIAN NARVAEZ BOTINA – APLAZA  LA FISCALIA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_131",
+    "datetime": "2026-04-10T08:30:00",
+    "description": "JUICIO ORAL - ALEGATOS RICHAR SANCHEZ JARAMILLO – APLAZA LA FISCALÍA PTE PREPARAR LOS ALEGATOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_132",
+    "datetime": "2026-04-10T10:30:00",
+    "description": "PREACUERDO DANEIRO ENRIQUE VILLADA ROSERO – FALTA TODO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_133",
+    "datetime": "2026-04-13T08:30:00",
+    "description": "CONTINUACIÓN PREACUERDO DIEGO FERNANDO FERNANDEZ DAZA - YESSICA MARIA ASTAIZA HERNANDEZ - JORGE EDUARDO ERASO HINESTROZA - BAYRON JOHAN ESPINOSA - ITAN SMIT VIDAL CERON - ROBERTH ALEXANDER SOLARTE ROSALES - JESUS FELIPE VELASCO CASTRO - VICTOR HUGO CHACON HERNANDEZ - DANNY ALEJANDRO VELASCO ESCOBAR - EDINSON MAURICIO PUYO TORRES - MARIA ELENA GUERRERO CAICEDO - APLAZA LA DEFENSA DR MELEDEZ INCAPACITADO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_134",
+    "datetime": "2026-04-13T14:00:00",
+    "description": "ACUSACION SIXTO JAIRO VALLEJO ANDRADE -  JOSE BLADIMIR RIASCOS RIASCOS - CAMILO ALEXANDER CORDOBA FERNANDEZ - JONATHAN ARBEY CIFUENTES ROSERO - LEIDY YINETH TENORIO GOMEZ - YESID LOPEZ GOMEZ - PAOLA ANDREA CIFUENTES LOPEZ- APLAZA LA DEFENSA PTE PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_135",
+    "datetime": "2026-04-14T08:30:00",
+    "description": "- JUICIO ORAL - EUTIMIO MANUEL CAMARGO ORTIZ – APLAZA LA DEFENSA NO ENCUENTRA LOS TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_136",
+    "datetime": "2026-04-14T14:00:00",
+    "description": "PRECLUSION MONICA FERNANDA LARGO TROCHEZ – APLAZA FISCAL POR CRUCE FALTA TODO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_137",
+    "datetime": "2026-04-14T15:30:00",
+    "description": "PREPARATORIA JEAN CARLOS CARABALI MINA - ELIAS DANIEL ROMERO SALCEDO - DUBAN BARRIOS RESTREPO - LUIS ENRIQUE DIAZ RODRIGUEZ – SE APLAZA POR LA DRA ADRIANA VALVERDE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_138",
+    "datetime": "2026-04-15T08:30:00",
+    "description": "ACUSACION - PRECLUSION CAROLINA STELLA BEDOYA MORALES - HOOVER NAZARIT POPO - SE NIEGALA PRECLUSIÓN",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_139",
+    "datetime": "2026-04-15T10:30:00",
+    "description": "PREPARATORIA JOSE MELBE ERAZO NARVAEZ – APLAZA EL DR PALTA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_140",
+    "datetime": "2026-04-15T14:00:00",
+    "description": "ACUSACION WILFRA OCORO ROSERO - NO SE HACE SE CITÓ MAL POR EL DESPACHO",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_141",
+    "datetime": "2026-04-15T15:30:00",
+    "description": "ACUSACIÓN - PRECLUSIÓN - JON JAIRO MUTIS IDROBO – SE PRECLUYE NO SE DEVUELVE EL DINERO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_142",
+    "datetime": "2026-04-16T08:30:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – FERNY YAFUE HILAMO - ESTRADOS - APLAZA LA FISCALIA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_143",
+    "datetime": "2026-04-16T14:00:00",
+    "description": "ACUSACION ARLES ANDRES RENGIFO MUÑOZ - WILLIAM RAMOS CAYAPU - APLAZA LA DEFENSA SIN ENERGIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_144",
+    "datetime": "2026-04-16T15:30:00",
+    "description": "PREACUERDO WERNEY RAMIREZ ORTIZ – APLAZA LA DEFENSA SIN ENERGIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_145",
+    "datetime": "2026-04-17T08:30:00",
+    "description": "JUICIO ORAL – SEBASTIAN ARARAT NUÑEZ  - LA DEFENSA APLAZA Y DESISTE DE TESTIGO PIDE EXPEDIENTE PARA ALEGATOS CAPACITACION NATICA BGTA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_146",
+    "datetime": "2026-04-20T08:30:00",
+    "description": "ACUSACIÓN WILDER QUIGUANAS CHAGENDO – APLAZA LA DEFENSA PTE PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_147",
+    "datetime": "2026-04-20T10:30:00",
+    "description": "ACUSACIÓN NESTOR ARTURO GOMEZ CUATINDIOY, JOHN JAIRO ARTEAGA ARCINIEGA- APLAZA LA DENFESA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_148",
+    "datetime": "2026-04-20T14:00:00",
+    "description": "JUICIO ORAL CRISTIAN ESTEBAN ORDOÑEZ OTAYA – SE PRECLUYE CAPACITACION NATICA BGTA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_149",
+    "datetime": "2026-04-21T08:30:00",
+    "description": "JUICIO ORAL – EDINSON CAVIEDES MARTINEZ – APLAZA DEFENSA PETE PREACUERDO 10: 30 PREPARATORIA FABIO NELSON BAICUE YATA CUE – EL DEFENSOR SOLICITA APLAZAMIENTO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_150",
+    "datetime": "2026-04-21T14:00:00",
+    "description": "JUICIO ORAL - EDGAR QUITUMBO PEÑA - SE ABRE AUDIO Y SE REPROGRAMA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_151",
+    "datetime": "2026-04-22T08:30:00",
+    "description": "JUICIO ORAL PRESENCIAL TOM DEIVY CARDONA CRUZ – APLAZA LA FISCAL ESTA DE LICENCIA",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_152",
+    "datetime": "2026-04-22T10:30:00",
+    "description": "ACUSACION - PREACUERDO KERLY TATIANA LEON MEDINA – SE VERBALIZA EL preacuerdo",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_153",
+    "datetime": "2026-04-22T14:00:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – FERNY YAFUE HILAMO – SE INICIA EL JUICIO Y SE SUSPENDE",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_154",
+    "datetime": "2026-04-22T16:00:00",
+    "description": "ACUSACION - PREACUERDO KERLY TATIANA LEON MEDINA – SE APRUEBA EL PREACUERDO HACE 447",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_155",
+    "datetime": "2026-04-23T08:30:00",
+    "description": "JUICIO ORAL – HECTOR FABIO BETANCOURT CALAMBAS Y JOAN FERNANDO BETANCOURT LOPEZ – APLAZA LA DEFENSA HECTOR BETANCOUR",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_156",
+    "datetime": "2026-04-23T14:00:00",
+    "description": "CONTINUACION PREACUERDO - JOSE EZEQUIEL VERA VERA - JHON JAIRO MEJIA GONZALEZ - JHON JAIRO OSNAS RIVERA - JOAN DANILO CARABALI DIAZ - ANDREINA ALEJANDRA GUZMAN RAMOS SE APRUEBA EL PREACUERDO SE HACE 447 Y SE PROFIERE SENTENCIA NO 06",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_157",
+    "datetime": "2026-04-24T08:30:00",
+    "description": "ACUSACION PREACUERDO - MAICO VALENCIA GARCIA - NO SE HACE EL PROCESADO SE DEMORA EN LA CONEXIÓN Y  DEFENSOR INDICA QUE TIENE CITA MEDICA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_158",
+    "datetime": "2026-04-24T11:00:00",
+    "description": "PRECLUSION ELMER ADRIAN NARVAEZ BOTINA – NO SE ACEPTA TRAER EL ESCRITO ACUSACION Y SE ORDENA REMITIR ESTA PETICIÓN AL J01 PENAL CTO ESP.",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_159",
+    "datetime": "2026-04-27T08:30:00",
+    "description": "PREPARATORIA GABRIEL DAGUA CAMPO – FISCALIA APLAZA LA AUDIENCIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_160",
+    "datetime": "2026-04-27T10:30:00",
+    "description": "ACUSACION NEIDER GOMEZ CASTRILLON FALTA TODO – SE ABRE AUDIO Y SE SUSPENDE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_161",
+    "datetime": "2026-04-27T14:00:00",
+    "description": "JUICIO ORAL ALEGATOS – JUAN CARLOS AGRONO CAICEDO – SE HACE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_162",
+    "datetime": "2026-04-28T08:30:00",
+    "description": "AUDIENCIA FORMULACION CARGOS LUIS ENRIQUE MEDINA ALEAN NO SE ABRE AUDIO – LA DEFENSA SOLICITA APLAZAMIENTO Y SE REPROGRAMA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_163",
+    "datetime": "2026-04-28T11:00:00",
+    "description": "ACUSACION - PREACUERDO KERLY TATIANA LEON MEDINA –SE PROFIERE SENTENCIA NO 07 APELA LA DEFENSA POR ESCRITO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_164",
+    "datetime": "2026-04-28T14:00:00",
+    "description": "JUICIO ORAL – YESICA MARCELA OSNAS RIVERA APLAZA LA FISCALIA NO ENCUENTRA TESTIGOS INICIA TERMINOS RECURRENTE APELACION KERLY TATIANA LEON 08: 30  ACUSACIÓN - PREACUERDO ELIANA ISABEL MELENDEZ FAJARDO ESTRADOS PTE REMISION Y MIN PUBLICO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_165",
+    "datetime": "2026-04-29T10:30:00",
+    "description": "ACUSACION - NELLY JOHANA MEJÍA DAZA Y GONZALO ALBEIRO ROSALES – APLAZA LA DEFENSA PTE EMP",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_166",
+    "datetime": "2026-04-29T14:00:00",
+    "description": "JUICIO ORAL ESTEBAN DANILO SALGADO – APLAZA LA FISCALIA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_167",
+    "datetime": "2026-04-30T08:30:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – KARIME ANDREA RAMOS - APLAZA LA DEFENSA POR CALAMIDAD DOMESTICA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_168",
+    "datetime": "2026-04-30T11:00:00",
+    "description": "ACUSACIÓN JUAN PABLO BASTIDAS SE VARIA A PREACUERDO SE IMPRUEBA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_169",
+    "datetime": "2026-04-30T14:00:00",
+    "description": "JUICIO ORAL ALVARO JESUS MONCAYO HERRERA – APLAZA LA DEFENSA RECORDAR QUE EN EL 2026 NO HAY QUE FIJAR  FECHA DE AUDIENCIAS EN LA SEMANA POSTERIOR A 8 DE MARZO Y 26 DE MAYO POR ELECCIONES 1 FESTIVO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_170",
+    "datetime": "2026-05-04T08:30:00",
+    "description": "PREPARATORIA – JOSE IBIS MICHELINO IBARBO – APLAZA LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_171",
+    "datetime": "2026-05-04T10:30:00",
+    "description": "ACUSACIÓN – PREACUERDO MIYER DUVAN PAZ CAICEDO, YEISON DANIEL MONTENEGRO OROZCO, OSCAR EDUARDO URREA VERGARA Y JORGE IVAN SOLARTE AGUIRRE – APLAZA LA DEFENSA POR",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_172",
+    "datetime": "2026-05-04T14:00:00",
+    "description": "ACUSACION KEVIN ALEJANDRO MORENO CARABALI - JHON GERSON LEON MANCILLA - ROBERTO JOSE CARDONA MEDINA - SE CONECTAN TODOS MENOS MIN PUBLICO, SE APLAZA POR LA BANCADA DE LA DEFENSA BUSCAN UN PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_173",
+    "datetime": "2026-05-05T08:30:00",
+    "description": "PREPARATORIA BRAINER ORLANDO DAZA Y SEBASTIAN MESTIZO DAZA - APLAZA LA DEFENSA PTE ORGANIZAR LAS SOLICITUDES PROBATORIAS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_174",
+    "datetime": "2026-05-05T10:30:00",
+    "description": "ACUSACION – MAYCOL CAMILO GARCIA TORO Y BEATRIZ HELENA TORO ORREGO – APLAZA LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_175",
+    "datetime": "2026-05-05T14:00:00",
+    "description": "JUICIO ORAL – MIREYA MORALES ORDOÑEZ Y JESUS ALDEMAR ORTEGA BRAVO – APLAZA LA FISCALÍA POR CRUCE FINALIZA TERMINOS RECURRENTE APELACION KERLY TATIANA LEON",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_176",
+    "datetime": "2026-05-06T08:30:00",
+    "description": "JUICIO ORAL – JESUS ADRIAN VARGAS GONZALEZ – SE HACE SE RECIBEN 2 TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_177",
+    "datetime": "2026-05-06T14:00:00",
+    "description": "JUICIO ORAL JHON MILLER LOPEZ MARTINEZ – APLAZA LA FISCALIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_178",
+    "datetime": "2026-05-06T14:00:00",
+    "description": "PRECLUSION MONICA FERNANDA LARGO TROCHEZ – APLAZA LA FISCALÍA PTE NOTIFICAR A LA PROCESADA INICIA TERMINOS NO RECURRENTE APELACION KERLY TATIANA LEON",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_179",
+    "datetime": "2026-05-07T08:30:00",
+    "description": "JUICIO ORAL YEFFERSON MUÑOZ CANO – SE HACE SE RECIBEN UN TESTIMONIO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_180",
+    "datetime": "2026-05-07T14:00:00",
+    "description": "JUICIO ORAL  - ALEXANDER LEAL MARTINEZ Y OTROS – SE ABRE AUDIO Y SE SUSPENDE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_181",
+    "datetime": "2026-05-08T08:30:00",
+    "description": "CONTINUACIÓN PREACUERDO DIEGO FERNANDO FERNANDEZ DAZA - YESSICA MARIA ASTAIZA HERNANDEZ - JORGE EDUARDO ERASO HINESTROZA - BAYRON JOHAN ESPINOSA - ITAN SMIT VIDAL CERON - ROBERTH ALEXANDER SOLARTE ROSALES - JESUS FELIPE VELASCO CASTRO - VICTOR HUGO CHACON HERNANDEZ - DANNY ALEJANDRO VELASCO ESCOBAR - EDINSON MAURICIO PUYO TORRES - MARIA ELENA GUERRERO CAICEDO – SE IMPRUEBA EL PREACUERDO CAPACITACION NATICA BGTA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_182",
+    "datetime": "2026-05-11T08:30:00",
+    "description": "CONTINUACIÓN PREPARATORIA – CRISTIAN DAVID YONDA CAMPO – APLAZA DEFENSA NO SE HA CORRIDO TRASLADO DE LOS EMP",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_183",
+    "datetime": "2026-05-11T14:00:00",
+    "description": "PREACUERDO BERNARDO VELASCO TAQUINAS - APLAZA  LA DEFENSA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_184",
+    "datetime": "2026-05-11T15:30:00",
+    "description": "ACUSACIÓN - JULIO FAVIO MERA PORTILLO – APLAZA LA FISCALIA POR CRUCE CAPACITACION NATICA BGTA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_185",
+    "datetime": "2026-05-12T08:30:00",
+    "description": "ACUSACIÓN - GUSTAVO ANTONIO VARELA TORRES – NO SE HACE FISCAL INCAPACITADO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_186",
+    "datetime": "2026-05-12T10:30:00",
+    "description": "INCIDENTE REPARACIÓN JAMES EMILIANO PACUE FERNANDEZ - SE ABRE AUDIO Y NO SE HACE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_187",
+    "datetime": "2026-05-12T14:00:00",
+    "description": "ACUSACION – PREACUERDO MIGUEL ANGEL ORTEGA CONTRERAS – APLAZA LA DEFENSA POR CRUCE 13 TURNO HABEAS CORPUS FINALIZA TERMINOS NO RECURRENTES APELACION KERLY TATIANA LEON",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_188",
+    "datetime": "2026-05-12T08:30:00",
+    "description": "PREPARATORIA – PREACUERDO YHON JAIRO BASTO – SE VERBALIZA EL PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_189",
+    "datetime": "2026-05-12T15:30:00",
+    "description": "JUICIO ORAL – ALEGATOS – CRISTIAN GEOVANY LOZANO DÍAZ -  NO SE HACE APLAZA LA FISCALIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_190",
+    "datetime": "2026-05-14T08:30:00",
+    "description": "JUICIO ORAL – JERSON YAMID ALDANA OLIVAR – APLAZA LA FISCALIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_191",
+    "datetime": "2026-05-14T14:00:00",
+    "description": "ACUSACION - PREACUERDO LUIS ALBERTO DUQUE SANCHEZ - JOHN FREDDY AYALA GOMEZ – SE RADICA LA RUPTURA PARA JOHN Y SE VARIA POR PREACUERDO Y SE VERBALIZA NO FIJAR AUDIENCIAS EL DR VA A REVISAR INVENTARIO DEL DESPACHO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_192",
+    "datetime": "2026-05-15T10:30:00",
+    "description": "CONTINUSCIÓN PREACUERDO - JOHN FREDDY AYALA GOMEZ – SE APRUEBA , SE HACE 447 Y SE PROFIERE SENTENCIA NO 8 FESTIVO",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_193",
+    "datetime": "2026-05-19T08:30:00",
+    "description": "ACUSACION DUVAN FELIPE MONTERO PIEDRIS APLAZA LA DEFENSA PÚBLICA MANIFESTÓ QUE EL PROCESADO ESTA CONSIGUIENDO DEF DE CONFIANZA,",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_194",
+    "datetime": "2026-05-19T10:30:00",
+    "description": "PREACUERDO ACUSACION – HOLMAN DANIEL GARCES LEDEZMA – APLAZA LA FISCALIA PENDITE UN EMP",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_195",
+    "datetime": "2026-05-19T14:00:00",
+    "description": "JUICIO ORAL – LUIS JAMER DAZA BURBANO – APLAZA LA FISCALÍA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_196",
+    "datetime": "2026-05-20T08:30:00",
+    "description": "JUICIO ORAL – MIGUEL VIRGILIO OROZCO TROMPETA – SE ABRE AUDIO DEFENSA APLAZA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_197",
+    "datetime": "2026-05-20T14:00:00",
+    "description": "JUICIO ORAL - ALEGATOS RICHAR SANCHEZ JARAMILLO -APLAZA LA DEFENSA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_198",
+    "datetime": "2026-05-20T16:00:00",
+    "description": "CONT  PRECLUSION - EDGAR HERNAN TENORIO MULCUE – SE NIEGA LA PRECLUSIÓN NO AGENDAR EN LA MAÑANA - CAPACITACIÓN ARL SR. JUEZ",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_199",
+    "datetime": "2026-05-21T14:00:00",
+    "description": "PREACUERDO ARLEY MAURICIO RUIZ TORRES – SE IMPRUEBA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_200",
+    "datetime": "2026-05-21T15:30:00",
+    "description": "ACUSACION ARLES ANDRES RENGIFO MUÑOZ - WILLIAM RAMOS CAYAPU – APLAZA LA DEFENSA Y FISCALIA PTE OPJ",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_201",
+    "datetime": "2026-05-22T08:30:00",
+    "description": "ACUSACIÓN - PRECLUSIÓN CARLOS ALBERTO GOMEZ VARGAS – APLAZA LA FISCALIA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_202",
+    "datetime": "2026-05-22T08:30:00",
+    "description": "ACUSACION - PREACUERDO SIXTO JAIRO VALLEJO ANDRADE -  JOSE BLADIMIR RIASCOS RIASCOS - CAMILO ALEXANDER CORDOBA FERNANDEZ - JONATHAN ARBEY CIFUENTES ROSERO - LEIDY YINETH TENORIO GOMEZ - YESID LOPEZ GOMEZ - PAOLA ANDREA CIFUENTES LOPEZ-SE HACE RUPTURA Y SE VERIFICA UN PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_203",
+    "datetime": "2026-05-22T10:30:00",
+    "description": "ACUSACION WILFRA OCORO ROSERO – VARIA A PREACUERDO Y SE APRUEBA SE HACE 447 Y SE PROFIERE SENTENCIA No 09",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_204",
+    "datetime": "2026-05-25T08:30:00",
+    "description": "PREACUERDO WERNEY RAMIREZ ORTIZ – SE APRUEBA EL PREACUERDO Y SE 447",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_205",
+    "datetime": "2026-05-25T10:30:00",
+    "description": "PREACUERDO - CESAR EDUARDO MUÑOZ ORDOÑEZ, DIEGO ARMANDO ROJAS MUÑOZ, GERARDO ENRIQUE RAMIREZ MEDINA, EIBER DARIO RUIZ BURBANO Y JHONNY LEANDRO SINISTERRA – APLAZA LA FISCALÍA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_206",
+    "datetime": "2026-05-25T14:00:00",
+    "description": "PREPARATORIA JEAN CARLOS CARABALI MINA - ELIAS DANIEL ROMERO SALCEDO - DUBAN BARRIOS RESTREPO - LUIS ENRIQUE DIAZ RODRIGUEZ – SE DECRETAN PRUEBAS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_207",
+    "datetime": "2026-05-26T08:30:00",
+    "description": "PREACUERDO DIANA CASTAÑEDA MALES SE APRUEBA EL PREACUERDO Y SE PROFIERE SENTENCIA NO 10",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_208",
+    "datetime": "2026-05-26T10:00:00",
+    "description": "CAPACITACIÓN DOC – ESCRUTINIOS MAÑANA",
+    "status": "completado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_209",
+    "datetime": "2026-05-26T14:00:00",
+    "description": "JUICIO ORAL - EUTIMIO MANUEL CAMARGO ORTIZ – SE RECIBE UN TESTIMONIO DE LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_210",
+    "datetime": "2026-05-27T08:30:00",
+    "description": "PREPARATORIA – EDGAR SILVIO MUÑOZ ORTIZ, KEVIN ESTEBAN BENAVIDES VALLEJO, REIMON YOVANNY VIVAS MONTILLA – SE ABRE AUDIO Y NO SE HACE FALTA UN ABOGADO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_211",
+    "datetime": "2026-05-27T14:00:00",
+    "description": "PREPARATORIA - OSCAR DAYAN LUCUMI VASQUEZ – SE ABRE AUDIO Y NO SE HACE 8:30 CONTINUACIÓN JUICIO ORAL – JESUS ARNULFO ENRIQUEZ ARAUJO Y OTROS – APLAZA LA FISCAL NO TIENE TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_212",
+    "datetime": "2026-05-28T14:00:00",
+    "description": "PREPARATORIA JAVIER DAVID COLLAZOS ANGULO – APLAZA LA DEFENSA PENDIENTE DE MISION DE TRABAJO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_213",
+    "datetime": "2026-05-29T08:30:00",
+    "description": "ACUSACIÓN WILDER QUIGUANAS CHAGENDO – SE APRUEBA Y  PROFIERE SENTENCIA NO 11 VISITA CONSEJO OJO DE 930 A 11:30",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_214",
+    "datetime": "2026-05-29T10:30:00",
+    "description": "ACUSACION PREACUERDO - MAICO VALENCIA GARCIA – SE VERBALIZA EL PREACUERDO Y SE SUSPENDE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_215",
+    "datetime": "2026-05-29T14:00:00",
+    "description": "PRECLUSION JUAN ESTEBAN PAPAMIJA RUIZ SE PRECLUYE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_216",
+    "datetime": "2026-05-29T15:00:00",
+    "description": "LECTURA SENTENCIA -  WERNEY RAMIREZ ORTIZ – SE PROFIERE SENTENCIA NO 12",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_217",
+    "datetime": "2026-05-29T16:00:00",
+    "description": "LECTURA -JUAN CARLOS AGRONO CAICEDO – REPROGRAMAR OJO 1 ESCRUTINIOS 2 ESCRUTINIOS 3 ESCRUTINIOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_218",
+    "datetime": "2026-06-29T13:30:00",
+    "description": "JUICIO ORAL  - ALEXANDER LEAL MARTINEZ Y OTROS – ESTRADOS  PRESENCIAL TODA LA TARDE - APLAZA LA FISCALÍA 4",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_219",
+    "datetime": "2026-06-29T08:30:00",
+    "description": "PREPARATORIA YEDICKSON ALEJANDRO CALDERA CASTRO – APLAZA LA DEFENSA POR CRUCE 10: 30 ACUSACION RODRIGO ALBEAR SAMBONI – SE ABRE AUDIO Y SE REPROGRAMA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_220",
+    "datetime": "2026-06-29T14:00:00",
+    "description": "ACUSACION KEVIN DAVID PULGARIN RUIZ – APLAZA LA FISCALIA, DE PERMISO 03:30 5",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_221",
+    "datetime": "2026-06-29T08:30:00",
+    "description": "ACUSACION CRISTIAN CAMILO GONZALEZ CUESTA – SE ACUSA 8 FESTIVO 9",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_222",
+    "datetime": "2026-06-29T08:30:00",
+    "description": "PREPARATORIA – PREACUERDO YHON JAIRO BASTO – REPROGRAMA EL DESPACHO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_223",
+    "datetime": "2026-06-29T14:00:00",
+    "description": "PREPARATORIA – DIDIER ALEJANDRO ORDOÑEZ ÑAÑEZ - APLAZA EL PROCESADO Y DEFENSA PTE UBICAR TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_224",
+    "datetime": "2026-06-29T15:30:00",
+    "description": "PREPARATORIA- JERSON DAVID RODRIGUEZ ORTIZ, JOSE LUIS GUAIPO DIAZ, MAYCOL ANDRES MARIN MURILLO –APLAZA LA DEFENSA DR MELENDEZ EN URGENCIAS PALTA EN OTRA AUDIENCIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_225",
+    "datetime": "2026-06-10T08:30:00",
+    "description": "JUICIO ORAL - EDGAR QUITUMBO PEÑA - SE HACE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_226",
+    "datetime": "2026-06-10T10:30:00",
+    "description": "ACUSACIÓN- PREACUERDO ELINA ISABEL MELENDEZ FAJARDO – APLAZA LA DEFENSA PTE INTERROGATORIO INDICIADO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_227",
+    "datetime": "2026-06-10T14:00:00",
+    "description": "PREPARATORIA JOSE MELBE ERAZO NARVAEZ – APLAZA LA FISCLÍA POR VACACIONES CAPACITACION NATICA BGTA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_228",
+    "datetime": "2026-06-11T08:30:00",
+    "description": "JUICIO ORAL – HECTOR FABIO BETANCOURT CALAMBAS Y JOAN FERNANDO BETANCOURT LOPEZ - APLAZA LA FISCALÍA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_229",
+    "datetime": "2026-06-11T11:00:00",
+    "description": "ACUSACION NEIDER GOMEZ CASTRILLON - SE ACUSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_230",
+    "datetime": "2026-06-11T14:00:00",
+    "description": "JUICIO ORAL ALEGATOS – SEBASTIAN ARARAT NUÑEZ - FALTA TODO DEFENSA SOLICITA APLAZAMIENTO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_231",
+    "datetime": "2026-06-11T16:00:00",
+    "description": "PRECLUSION MONICA FERNANDA LARGO TROCHEZ – REPROGRAMA EL DESPACHO CAPACITACION NATICA BGTA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_232",
+    "datetime": "2026-06-12T10:00:00",
+    "description": "CONTINUEACIÓN PREACUERDO - MAICO VALENCIA GARCIA – APLAZA LA FISCALÍA CAPTURADOS FESTIVO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_233",
+    "datetime": "2026-06-16T08:30:00",
+    "description": "ACUSACION - SIXTO JAIRO VALLEJO ANDRADE - JOSE BLADIMIR RIASCOS RIASCOS - CAMILO ALEXANDER CORDOBA FERNANDEZ - JONATHAN ARBEY CIFUENTES ROSERO - LEIDY YINETH TENORIO GOMEZ - YESID LOPEZ GOMEZ - PAOLA ANDREA CIFUENTES LOPEZ –NO SE HACE NO CONECTAN A LOS PROCESADOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_234",
+    "datetime": "2026-06-16T10:30:00",
+    "description": "ACUSACION – PREACUERDO MIGUEL ANGEL ORTEGA CONTRERAS – SE ABRE AUDIO Y REPROGRAMA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_235",
+    "datetime": "2026-06-16T14:00:00",
+    "description": "CONTINUACIÓN PREACUERDO – SIXTO JAIRO VALLEJO Y CAMILO ALEXANDER CORDOBA FERNANDEZ RADICADO RUPTURA – APLAZA EL DESPACHO POR AGENDA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_236",
+    "datetime": "2026-06-17T08:30:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – FERNY YAFUE HILAMO –SE HACE SE RECIBEN 2 TESTIGOS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_237",
+    "datetime": "2026-06-17T14:00:00",
+    "description": "JUICIO ORAL – JESUS ADRIAN VARGAS GONZALEZ – APLAZA LA FISCALIA EL TESTIGO NO SE PUEDE CONECTAR",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_238",
+    "datetime": "2026-06-18T08:30:00",
+    "description": "JUICIO ORAL – EDINSON CAVIEDES MARTINEZ – APLAZA LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_239",
+    "datetime": "2026-06-18T10:30:00",
+    "description": "PREPARATORIA – JOSE IBIS MICHELINO IBARBO – APLAZA LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_240",
+    "datetime": "2026-06-18T14:00:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – KARIME ANDREA RAMOS –APLAZA LA FISCALIA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_241",
+    "datetime": "2026-06-19T08:30:00",
+    "description": "PREPARATORIA O PREACUERDO FABIO NELSON BAICUE YATA CUE-NO SE HACE EL PROCESADO ESTA PROFUGO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_242",
+    "datetime": "2026-06-19T10:30:00",
+    "description": "ACUSACION KEVIN ALEJANDRO MORENO CARABALI - JHON GERSON LEON MANCILLA - ROBERTO JOSE CARDONA MEDINA - APLAZA LOS PROCESADOS Escrutinios Escrutinios",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_243",
+    "datetime": "2026-06-23T14:00:00",
+    "description": "PREACUERDO BERNARDO VELASCO TAQUINAS – APLAZA LA DEFENSA PENDIENTE EMP PARA 447",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_244",
+    "datetime": "2026-06-24T08:30:00",
+    "description": "JUICIO ORAL YEFFERSON MUÑOZ CANO – APLAZA LA DEFENSA POR FALTA DE TESTIGOS ",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_245",
+    "datetime": "2026-06-24T11:00:00",
+    "description": "ACUSACION – MAYCOL CAMILO GARCIA TORO Y BEATRIZ HELENA TORO ORREGO – APLAZA LA DEFENSA POR CITA MÉDICA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_246",
+    "datetime": "2026-06-24T14:00:00",
+    "description": "ACUSACIÓN – PREACUERDO MIYER DUVAN PAZ CAICEDO, YEISON DANIEL MONTENEGRO OROZCO, OSCAR EDUARDO URREA VERGARA Y JORGE IVAN SOLARTE AGUIRRE – APLAZA LA DEFENSA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_247",
+    "datetime": "2026-06-24T15:30:00",
+    "description": "ACUSACION - NELLY JOHANA MEJÍA DAZA Y GONZALO ALBEIRO ROSALES – APLAZA LA DEFENSA POR CRUCE 25 JUEZ DE PERMISO RESOLUCIÓN NO 257 DEL 19-06-2026",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_248",
+    "datetime": "2026-06-24T08:30:00",
+    "description": "JUICIO ORAL ESTEBAN DANILO SALGADO – FALTA TODO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_249",
+    "datetime": "2026-06-24T11:00:00",
+    "description": "ACUSACIÓN - GUSTAVO ANTONIO VARELA TORRES – FALTA TODO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_250",
+    "datetime": "2026-06-24T14:00:00",
+    "description": "JUICIO ORAL – MIREYA MORALES ORDOÑEZ Y JESUS ALDEMAR ORTEGA BRAVO – APLAZA LA DEFENSA POR CRUCE Y FISCALÍA POR VACACIONES 26 JUEZ DE PERMISO RESOLUCIÓN NO 257 DEL 19-06-2026",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_251",
+    "datetime": "2026-06-24T08:30:00",
+    "description": "JUICIO ORAL - ALEGATOS RICHAR SANCHEZ JARAMILLO – FALTA TODO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_252",
+    "datetime": "2026-06-24T10:30:00",
+    "description": "JUICIO ORAL – ALEGATOS Y LECTURA DE SENTENCIA – CRISTIAN GEOVANY LOZANO DÍAZ - FALTA TODO FESTIVO REPROGRAMAR",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_253",
+    "datetime": "2026-06-30T08:30:00",
+    "description": "ACUSACIÓN - JULIO FAVIO MERA PORTILLO – APLAZA LA FISCALÍA PENDIENTE INTERROGATORIO A INDICIADO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_254",
+    "datetime": "2026-06-30T10:30:00",
+    "description": "PREPARATORIA GABRIEL DAGUA CAMPO – APLAZA LA FISCALÍA POR CITA MÉDICA ARL",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_255",
+    "datetime": "2026-06-30T14:00:00",
+    "description": "JUICIO ORAL PRESENCIAL TOM DEIVY CARDONA CRUZ – APLAZA LA FISCALÍA POR CAPACITACION",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_256",
+    "datetime": "2026-07-01T08:30:00",
+    "description": "ACUSACIÓN LUIS ALFREDO ALFONSO HUERTAS -  YEIMER YAIR ALVAREZ CASTRO -  JOSE HERMINIO MOSQUERA ANDRADE - ELBERT RODRIGUEZ MIRANDA – NO SE HACE ",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_257",
+    "datetime": "2026-07-01T10:30:00",
+    "description": "CONTINUACIÓN PREACUERDO – SIXTO JAIRO VALLEJO Y CAMILO ALEXANDER CORDOBA FERNANDEZ RADICADO RUPTURA – SE APRUEBA PREACUERDO Y SE HACE 447",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_258",
+    "datetime": "2026-07-01T14:00:00",
+    "description": "JUICIO ORAL ALVARO JESUS MONCAYO HERRERA – SE RECIBEN TESTIGOS DE LA DEFENSA",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_259",
+    "datetime": "2026-07-02T08:30:00",
+    "description": "ACUSACION ARLES ANDRES RENGIFO MUÑOZ - WILLIAM RAMOS CAYAPU – APLAZA LA FISCALÍA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_260",
+    "datetime": "2026-07-02T10:30:00",
+    "description": "PREACUERDO ACUSACION – HOLMAN DANIEL GARCES LEDEZMA  SE DECLARA IMPEDIMENTO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_261",
+    "datetime": "2026-07-02T14:00:00",
+    "description": "ACUSACIÓN - PRECLUSIÓN CARLOS ALBERTO GOMEZ VARGAS – APLAZA LA FISCALÍA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_262",
+    "datetime": "2026-07-03T08:30:00",
+    "description": "INDIVIDUALIZACIÓN DE LA PENA Y SENTENCIA CARLOS ALBERTO LONDOÑO GIRALDO – SE HACE 447 Y SE PROFIERE SENTENCIA NO 13",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_263",
+    "datetime": "2026-07-03T10:30:00",
+    "description": "ACUSACION JACKSON RAFAEL ZAMBRANO PARADA - SE ABRE AUDIO Y SE REPROGRAMA BUSCAN UN PREACUERDO",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_264",
+    "datetime": "2026-07-06T08:30:00",
+    "description": "PREPARATORIA BRAINER ORLANDO DAZA Y SEBASTIAN MESTIZO DAZA - SE DECRETAN PRUEBAS",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_265",
+    "datetime": "2026-07-06T10:30:00",
+    "description": "ACUSACION - PREACUERDO LUIS ALBERTO DUQUE SANCHEZ – SE INICIA LA ACUSACIÓN",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_266",
+    "datetime": "2026-07-06T14:00:00",
+    "description": "CONTINUACIÓN PREPARATORIA – CRISTIAN DAVID YONDA CAMPO – APLAZA LA FISCALÍA POR CRUCE",
+    "status": "completado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_267",
+    "datetime": "2026-07-07T08:30:00",
+    "description": "JUICIO ORAL – JERSON YAMID ALDANA OLIVAR – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_268",
+    "datetime": "2026-07-07T11:00:00",
+    "description": "INCIDENTE REPARACIÓN JAMES EMILIANO PACUE FERNANDEZ – FALTA TODO 02:00",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_269",
+    "datetime": "2026-07-08T08:30:00",
+    "description": "JUICIO ORAL – YESICA MARCELA OSNAS RIVERA – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_270",
+    "datetime": "2026-07-08T10:30:00",
+    "description": "ACUSACION DUVAN FELIPE MONTERO PIEDRIS – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_271",
+    "datetime": "2026-07-08T14:00:00",
+    "description": "JUICIO ORAL – LUIS JAMER DAZA BURBANO – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_272",
+    "datetime": "2026-07-09T08:30:00",
+    "description": "JUICIO ORAL - EUTIMIO MANUEL CAMARGO ORTIZ – PTE MIN PUBLICO  CITAR POR EL DESPACHO LOS TESTIGOS DE LA DEFENSA AL EJERCITO Y A LA POLICIA",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_273",
+    "datetime": "2026-07-09T14:00:00",
+    "description": "ACUSACION - SIXTO JAIRO VALLEJO ANDRADE - JOSE BLADIMIR RIASCOS RIASCOS - CAMILO ALEXANDER CORDOBA FERNANDEZ - JONATHAN ARBEY CIFUENTES ROSERO - LEIDY YINETH TENORIO GOMEZ - YESID LOPEZ GOMEZ - PAOLA ANDREA CIFUENTES LOPEZ – FALTA TODO PERMISO JUAN FESTIVO PERMISO JUAN DIA DEL GUARDIAN – NO HAY CONEXIÓN A PPL EN INPEC",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_274",
+    "datetime": "2026-07-14T08:30:00",
+    "description": "-PREPARATORIA JAVIER DAVID COLLAZOS ANGULO – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_275",
+    "datetime": "2026-07-14T10:30:00",
+    "description": "ACUSACION  KEVIN DAVID PULGARIN RUIZ – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_276",
+    "datetime": "2026-07-14T14:00:00",
+    "description": "PREPARATORIA CRISTIAN CAMILO GONZALEZ CUESTA – ESTRADOS PTE MIN PUBLICO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_277",
+    "datetime": "2026-07-15T08:30:00",
+    "description": "PREACUERDO EDWIN MAURICIO BOLAÑOS LASSO - DAVID SEBASTIAN GUZMAN  MAYORGA FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_278",
+    "datetime": "2026-07-15T10:30:00",
+    "description": "ACUSACION YURY YULIETH BRAVO BRAVO FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_279",
+    "datetime": "2026-07-15T14:00:00",
+    "description": "CONTINUACIÓN PREACUERDO - MAICO VALENCIA GARCIA - FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_280",
+    "datetime": "2026-07-16T08:30:00",
+    "description": "PRECLUSION MONICA FERNANDA LARGO TROCHEZ – FALTA TODO – PTE DECLARAR IMPEDIMENTO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_281",
+    "datetime": "2026-07-16T10:30:00",
+    "description": "PREPARATORIA – JOSE IBIS MICHELINO IBARBO – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_282",
+    "datetime": "2026-07-16T14:00:00",
+    "description": "PREPARATORIA – DIDIER ALEJANDRO ORDOÑEZ ÑAÑEZ - FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_283",
+    "datetime": "2026-07-17T08:30:00",
+    "description": "ACUSACION OSCAR ROLANDO MALES DIAZ FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_284",
+    "datetime": "2026-07-17T10:30:00",
+    "description": "ACUSACION - NELLY JOHANA MEJÍA DAZA Y GONZALO ALBEIRO ROSALES – FALTA TODO PTE DECLARAR IMPEDIMENTO FESTIVO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_285",
+    "datetime": "2026-07-21T08:30:00",
+    "description": "PREPARATORIA – PREACUERDO YHON JAIRO BASTO – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_286",
+    "datetime": "2026-07-21T14:00:00",
+    "description": "ACUSACION KEVIN ALEJANDRO MORENO CARABALI - JHON GERSON LEON MANCILLA - ROBERTO JOSE CARDONA MEDINA -ESTRADOS PTE MIN PUBLICO Y VICTIMAS",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_287",
+    "datetime": "2026-07-22T08:30:00",
+    "description": "JUICIO ORAL – CARLOS EDUARDO VELASCO SARRIA – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_288",
+    "datetime": "2026-07-22T14:00:00",
+    "description": "JUICIO ORAL - JEAN CARLOS CARABALI MINA - ELIAS DANIEL ROMERO SALCEDO - DUBAN BARRIOS RESTREPO - LUIS ENRIQUE DIAZ RODRIGUEZ- ESRTADOS PRESENCIAL PTE MIN PUBLICO, VICTIMAS REMISIONES",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_289",
+    "datetime": "2026-07-23T08:30:00",
+    "description": "AUDIENCIA FORMULACION CARGOS LUIS ENRIQUE MEDINA ALEAN FALTA TODO (LEY 600)",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_290",
+    "datetime": "2026-07-23T10:30:00",
+    "description": "PREPARATORIA YEDICKSON ALEJANDRO CALDERA CASTRO – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_291",
+    "datetime": "2026-07-23T14:00:00",
+    "description": "ACUSACIÓN - PREACUERDO RODRIGO ALBEAR SAMBONI – ESTRADOS PTE MIN PUBLICO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_292",
+    "datetime": "2026-07-24T08:30:00",
+    "description": "PREACUERDO BERNARDO VELASCO TAQUINAS – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_293",
+    "datetime": "2026-07-27T08:30:00",
+    "description": "PREPARATORIA O PREACUERDO FABIO NELSON BAICUE YATACUE – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_294",
+    "datetime": "2026-07-27T10:30:00",
+    "description": "JUICIO ORAL ALEGATOS – SEBASTIAN ARARAT NUÑEZ -  FALTA TODO – CONFIRMAR QUE FISCAL QUEDARÁ A CARGO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_295",
+    "datetime": "2026-07-28T08:30:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – KARIME ANDREA RAMOS – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_296",
+    "datetime": "2026-07-28T11:00:00",
+    "description": "ACUSACIÓN – PREACUERDO MIYER DUVAN PAZ CAICEDO, YEISON DANIEL MONTENEGRO OROZCO, OSCAR EDUARDO URREA VERGARA Y JORGE IVAN SOLARTE AGUIRRE – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_297",
+    "datetime": "2026-07-28T14:00:00",
+    "description": "JUICIO ORAL – JESUS ADRIAN VARGAS GONZALEZ –",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_298",
+    "datetime": "2026-07-29T08:30:00",
+    "description": "PREPARATORIA JOSE MELBE ERAZO NARVAEZ – FALTA TODO",
+    "status": "notificado",
+    "is_notified": true
+  },
+  {
+    "id": "evt_299",
+    "datetime": "2026-07-29T10:30:00",
+    "description": "ACUSACIÓN- PREACUERDO ELINA ISABEL MELENDEZ FAJARDO – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_300",
+    "datetime": "2026-07-29T14:00:00",
+    "description": "JUICIO ORAL – HECTOR FABIO BETANCOURT CALAMBAS Y JOAN FERNANDO BETANCOURT LOPEZ – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_301",
+    "datetime": "2026-07-30T08:30:00",
+    "description": "CONTINUACIÓN  ACUSACION –  MIGUEL ANGEL ORTEGA CONTRERAS – ESTRADOS PTE REMISION Y MIN PUBLICO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_302",
+    "datetime": "2026-07-30T10:30:00",
+    "description": "PREPARATORIA- JERSON DAVID RODRIGUEZ ORTIZ, JOSE LUIS GUAIPO DIAZ, MAYCOL ANDRES MARIN MURILLO – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_303",
+    "datetime": "2026-07-30T14:00:00",
+    "description": "JUICIO ORAL – EDINSON CAVIEDES MARTINEZ – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_304",
+    "datetime": "2026-08-03T14:00:00",
+    "description": "PREPARATORIA - PREACUERDO JOSE ENRIQUE POVEDA, EDIER ANUAR MENESES, EDWIN ARBEY POVEDA, JEISON ANDREY POVEDA DIAZ – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_305",
+    "datetime": "2026-08-03T15:30:00",
+    "description": "ACUSACIÓN - JULIO FAVIO MERA PORTILLO – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_306",
+    "datetime": "2026-08-04T08:30:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – JESUS ARNULFO ENRIQUEZ ARAUJO Y OTROS – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_307",
+    "datetime": "2026-08-04T10:30:00",
+    "description": "JUICIO ORAL - ALEGATOS RICHAR SANCHEZ JARAMILLO – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_308",
+    "datetime": "2026-08-04T14:00:00",
+    "description": "JUICIO ORAL JHON MILLER LOPEZ MARTINEZ – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_309",
+    "datetime": "2026-08-05T08:30:00",
+    "description": "JUICIO ORAL ESTEBAN DANILO SALGADO – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_310",
+    "datetime": "2026-08-05T11:00:00",
+    "description": "ACUSACIÓN - GUSTAVO ANTONIO VARELA TORRES – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_311",
+    "datetime": "2026-08-05T14:00:00",
+    "description": "JUICIO ORAL – MIREYA MORALES ORDOÑEZ Y JESUS ALDEMAR ORTEGA BRAVO – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_312",
+    "datetime": "2026-08-06T08:30:00",
+    "description": "JUICIO ORAL  - ALEXANDER LEAL MARTINEZ Y OTROS – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_313",
+    "datetime": "2026-08-06T14:00:00",
+    "description": "PREPARATORIA – EDGAR SILVIO MUÑOZ ORTIZ, KEVIN ESTEBAN BENAVIDES VALLEJO, REIMON YOVANNY VIVAS MONTILLA – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_314",
+    "datetime": "2026-08-07T08:30:00",
+    "description": "PREPARATORIA GABRIEL DAGUA CAMPO – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_315",
+    "datetime": "2026-08-07T10:30:00",
+    "description": "ACUSACION – MAYCOL CAMILO GARCIA TORO Y BEATRIZ HELENA TORO ORREGO – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_316",
+    "datetime": "2026-08-10T08:30:00",
+    "description": "PREPARATORIA - OSCAR DAYAN LUCUMI VASQUEZ – ESTRADOS PTE REMISION VICITMAS (MIRAR SI SE REPROGRAMA)",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_317",
+    "datetime": "2026-08-10T14:00:00",
+    "description": "PREPARATORIA -  NEIDER GOMEZ CASTRILLON – ESTRADOS PTE MIN PUBLICO REMISION",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_318",
+    "datetime": "2026-08-11T08:30:00",
+    "description": "JUICIO ORAL YEFFERSON MUÑOZ CANO – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_319",
+    "datetime": "2026-08-11T14:00:00",
+    "description": "FORMULACION DE ACUSACION JOHN JAIRO MELENJE QUILINDO – LUIS JAVIER QUIÑONES OBANDO FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_320",
+    "datetime": "2026-08-12T08:30:00",
+    "description": "ACUSACIÓN - PRECLUSIÓN CARLOS ALBERTO GOMEZ VARGAS – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_321",
+    "datetime": "2026-08-12T10:30:00",
+    "description": "ACUSACIÓN NESTOR ARTURO GOMEZ CUATINDIOY, JOHN JAIRO ARTEAGA ARCINIEGA – FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_322",
+    "datetime": "2026-08-12T14:00:00",
+    "description": "CONTINUACIÓN ACUSACION - LUIS ALBERTO DUQUE SANCHEZ - ESTRADOS PTE REMISIÓN MIN PÚBLICO.",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_323",
+    "datetime": "2026-08-13T08:30:00",
+    "description": "PREACUERDO - CESAR EDUARDO MUÑOZ ORDOÑEZ, DIEGO ARMANDO ROJAS MUÑOZ, GERARDO ENRIQUE RAMIREZ MEDINA, EIBER DARIO RUIZ BURBANO Y JHONNY LEANDRO SINISTERRA – FALTA TODO FESTIVO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_324",
+    "datetime": "2026-08-19T08:30:00",
+    "description": "CONTINUACIÓN JUICIO ORAL – FERNY YAFUE HILAMO – ESTRADOS PTE REMISIÓN MIN PUBLICO Y VICITMAS testigos pendientes TODO EL DIA JUICIO ORAL - EDGAR QUITUMBO PEÑA - MAÑANA  FALTA TODO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_325",
+    "datetime": "2026-08-26T08:30:00",
+    "description": "JUICIO ORAL – MIGUEL VIRGILIO OROZCO TROMPETA – ESTRADOS  PRACTICA DEFENSA PTE REMISION , FERNANDO ISRAEL MENDEZ QUITUMBO, VICTIMAS Y MIN PUBLICO (TODO LA MAÑANA)",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_326",
+    "datetime": "2026-09-01T08:30:00",
+    "description": "– LECTURA DE SENTENCIA - SIXTO JAIRO VALLEJO Y CAMILO ALEXANDER CORDOBA FERNANDEZ RADICADO RUPTURA – ESTRADOS PTE REMISIÓN PROCESADOS MIN PUBLICO",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_327",
+    "datetime": "2026-09-01T10:30:00",
+    "description": "JUICIO ORAL ALEGATOS SENTIDO DEL FALLO - ALVARO JESUS MONCAYO HERRERA – ESTRADOS",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_328",
+    "datetime": "2026-09-02T08:30:00",
+    "description": "JUICIO ORAL - BRAINER ORLANDO DAZA Y SEBASTIAN MESTIZO DAZA – ESTRADOS TODA LA MAÑANA PRESENCIAL 02:00",
+    "status": "programado",
+    "is_notified": false
+  },
+  {
+    "id": "evt_329",
+    "datetime": "2026-09-16T08:30:00",
+    "description": "ACUSACIÓN JACKSON RAFAEL ZAMBRANO PARADA – ESTRADOS PTE MIN PUBLICO FESTIVO FESTIVO FESTIVO FESTIVO DIA DE LA RAMA VACANCIA VACANCIA VACANCIA VACANCIA VACANCIA VACANCIA VACANCIA VACANCIA VACANCIA VACANCIA",
+    "status": "programado",
+    "is_notified": false
+  }
+]

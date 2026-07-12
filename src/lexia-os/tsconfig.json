@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": ".",
+    "paths": {
+      "@lexia/shared": ["packages/shared/index.ts"],
+      "@lexia/domain": ["packages/domain/index.ts"],
+      "@lexia/kernel": ["packages/kernel/index.ts"],
+      "@lexia/interaction": ["packages/interaction/index.ts"]
+    }
+  }
+}
