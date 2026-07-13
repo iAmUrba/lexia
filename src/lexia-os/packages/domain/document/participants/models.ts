@@ -11,6 +11,8 @@ export interface RoleDefinition {
   readonly category: 'judicial' | 'ministerio_publico' | 'partes' | 'terceros' | 'otro';
 }
 
+export type DetectionKind = 'ROLE_PREFIX' | 'HONORIFIC' | 'ENTITY_NAME' | 'SIGNATURE' | 'PATTERN' | 'UNKNOWN';
+
 /**
  * Representa una mención explícita encontrada en el texto del documento.
  */
@@ -19,6 +21,7 @@ export interface ParticipantMention {
   readonly rawText: string;
   readonly normalizedText?: string;
   readonly kind: 'PERSON' | 'ORGANIZATION' | 'UNKNOWN';
+  readonly detectionKind: DetectionKind;
   readonly evidence: FieldEvidence;
 }
 
