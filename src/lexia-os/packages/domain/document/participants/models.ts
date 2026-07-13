@@ -54,6 +54,8 @@ export interface ParticipantMentionsAsset extends DocumentAsset {
   readonly mentions: ParticipantMention[];
 }
 
+export type CandidateResolutionState = 'LINKED' | 'UNRESOLVED' | 'CONFLICT';
+
 /**
  * Objeto intermedio (candidato) durante el proceso de Entity Linking.
  * No es todavía un Participant definitivo.
@@ -64,6 +66,7 @@ export interface ParticipantCandidate {
   readonly aliases: string[];
   readonly mentions: ParticipantMention[];
   readonly confidence: ConfidenceScore;
+  readonly resolutionState: CandidateResolutionState;
 }
 
 /**
