@@ -1,0 +1,6 @@
+{
+  "method": "NativeText",
+  "requiresHumanReview": true,
+  "minimumCharacters": 10,
+  "warnings": ["LOW_TEXT"]
+}

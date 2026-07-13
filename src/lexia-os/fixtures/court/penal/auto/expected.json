@@ -1,0 +1,9 @@
+{
+  "expected": {
+    "radicado": null,
+    "juzgado": null,
+    "tipoDocumento": null,
+    "fecha": null,
+    "advertencias": ["LOW_TEXT"]
+  }
+}

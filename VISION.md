@@ -112,7 +112,27 @@ Decir "ya está hecho" no basta. Una funcionalidad solo está realmente **comple
 - Maneja errores de forma proactiva.
 - Degrada elegantemente (si falla un servicio subyacente, el usuario sigue teniendo opciones).
 - Está documentada.
-- Respeta la arquitectura conceptual y los principios de esta Visión.
+- Respeta la arquitectura conceptual y los principios de esta
 
----
+## El Patrón de Crecimiento
+"Primero construimos una plataforma confiable. Después construimos inteligencia sobre ella. La inteligencia sin una plataforma sólida es solo una demostración; una plataforma sólida permite crear un ecosistema."
+
+Y como regla hermana e inquebrantable para el crecimiento de la plataforma:
+**"Toda capacidad nueva de LexIA debe poder integrarse como un componente sobre LexIA Platform, sin modificar sus fundamentos."**
+
+## LexIA Pipeline Pattern
+El flujo universal, obligatorio y estándar para cualquier operación que altere o introduzca información en el sistema (documentos, autos, expedientes, agendas) sigue un diseño lineal auditable:
+```text
+Input 
+  ↓
+Receipt
+  ↓
+Audit
+  ↓
+Domain Event
+  ↓
+Result
+```
+Esta arquitectura garantiza que la historia de cualquier operación sea reconstruible y confiable en entornos distribuidos.
+
 *Nota: Este documento es la "constitución" del proyecto. No es estático, pero sí muy estable. Modificarlo es un acontecimiento excepcional que requiere una discusión estratégica profunda. Ante cualquier duda técnica, la brújula es: "¿Esto acerca a LexIA a la visión que definimos, o la aleja?"*

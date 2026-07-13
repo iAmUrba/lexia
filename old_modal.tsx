@@ -15,7 +15,6 @@ export default function NewDocumentModal({ isOpen, onClose, onGenerate, initialT
   const [formData, setFormData] = useState<Record<string, any>>({});
   const [isExtracting, setIsExtracting] = useState<Record<string, boolean>>({});
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const [currentAiField, setCurrentAiField] = useState<string | null>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [isGeneratingDocument, setIsGeneratingDocument] = useState(false);
   const { user } = useAuth();
@@ -172,31 +171,7 @@ export default function NewDocumentModal({ isOpen, onClose, onGenerate, initialT
 
         {/* Body */}
         <div className="flex-1 flex overflow-hidden">
-          {/* Sidebar - Plantillas */}
-          <div className="w-1/3 border-r border-slate-800 bg-slate-950/30 overflow-y-auto custom-scrollbar p-6">
-            <h3 className="text-xs font-black uppercase tracking-widest text-slate-500 mb-6">Plantillas Disponibles</h3>
-            <div className="flex flex-col gap-3">
-              {templatesCatalog.map(tpl => {
-                const isSelected = selectedTemplateId === tpl.id;
-                return (
-                  <button 
-                    key={tpl.id}
-                    onClick={() => {
-                      setSelectedTemplateId(tpl.id);
-                      setFormData({});
-                    }}
-                    className={`text-left p-4 rounded-2xl transition-all duration-300 border group ${isSelected ? 'bg-indigo-600/10 border-indigo-500 shadow-[0_0_20px_rgba(79,70,229,0.15)] shadow-indigo-500/20' : 'bg-slate-900/50 border-slate-700/50 hover:bg-slate-800 hover:border-slate-600'}`}
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <span className={`text-2xl transition-transform duration-300 ${isSelected ? 'scale-110' : 'group-hover:scale-110'}`}>{tpl.icon}</span>
-                      {isSelected && <span className="w-2 h-2 rounded-full bg-indigo-500 shadow-[0_0_10px_rgba(79,70,229,1)] animate-pulse"></span>}
-                    </div>
-                    <h4 className={`font-black text-sm tracking-wide ${isSelected ? 'text-indigo-400' : 'text-slate-300 group-hover:text-slate-200'}`}>{tpl.name}</h4>
-                    <p className="text-xs text-slate-500 mt-2 leading-relaxed font-medium line-clamp-2">{tpl.description}</p>
-                  </button>
-                );
-              })}
-            </div>
+            })}
           </div>
 
           {/* Main Area - Formulario */}

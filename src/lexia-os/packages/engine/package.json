@@ -1,0 +1,18 @@
+{
+  "name": "@lexia/engine",
+  "version": "1.0.0",
+  "description": "LexIA Cognitive Execution Engine",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "node --test --import tsx **/*.test.ts"
+  },
+  "dependencies": {
+    "@lexia/foundation": "*"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2",
+    "@types/node": "^20.11.24"
+  }
+}

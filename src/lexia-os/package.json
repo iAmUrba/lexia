@@ -4,7 +4,9 @@
   "private": true,
   "type": "module",
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "packages/adapters/*",
+    "apps/*"
   ],
   "main": "index.js",
   "directories": {

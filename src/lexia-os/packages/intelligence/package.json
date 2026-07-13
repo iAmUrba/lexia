@@ -1,0 +1,22 @@
+{
+  "name": "@lexia/intelligence",
+  "version": "1.0.0",
+  "description": "LexIA Cognitive Capabilities",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "node --test --import tsx **/*.test.ts"
+  },
+  "dependencies": {
+    "@lexia/foundation": "*",
+    "@lexia/domain": "*",
+    "@lexia/engine": "*",
+    "@lexia/io": "*",
+    "@lexia/adapters-pdf": "*"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.1",
+    "typescript": "^5.4.2",
+    "@types/node": "^20.11.24"
+  }
+}

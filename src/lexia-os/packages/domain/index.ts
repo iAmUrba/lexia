@@ -216,3 +216,6 @@ export const createTutelaRecibidaEvent = (payload: { radicado: string; remitente
   type: EventType.TutelaRecibida,
   payload
 });
+
+// LexIA Document Domain 2.0 (Asset-based)
+export * from './document/index.js';

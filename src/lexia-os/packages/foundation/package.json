@@ -1,0 +1,13 @@
+{
+  "name": "@lexia/foundation",
+  "version": "1.0.0",
+  "description": "LexIA Platform - Cimientos técnicos aislados del dominio jurídico",
+  "main": "index.ts",
+  "scripts": {
+    "test": "node --test --import tsx **/*.test.ts"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "@lexia/application",
+  "version": "1.0.0",
+  "description": "Capa de aplicacion para LexIA (Views, Projections, Validators)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "test": "tsx --test usecases/*.test.ts"
+  },
+  "dependencies": {
+    "@lexia/domain": "*",
+    "@lexia/io": "*",
+    "@lexia/intelligence": "*",
+    "@lexia/engine": "*",
+    "@lexia/adapters-pdf": "*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}
