@@ -9,7 +9,7 @@ export interface AssetId {
   readonly value: string;
 }
 
-export type AssetType = 'PlainText' | 'Metadata' | 'OCR' | 'Classification' | 'Summary' | 'MimeType' | 'ExtractionStatus' | 'ExtractionQuality' | 'DocumentIndex';
+export type AssetType = 'PlainText' | 'Metadata' | 'OCR' | 'Classification' | 'Summary' | 'MimeType' | 'ExtractionStatus' | 'ExtractionQuality' | 'DocumentIndex' | 'ParticipantMentions' | 'Participants';
 
 export interface DocumentAsset {
   readonly assetId: AssetId;
