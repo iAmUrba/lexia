@@ -220,3 +220,4 @@ export const createTutelaRecibidaEvent = (payload: { radicado: string; remitente
 // LexIA Document Domain 2.0 (Asset-based)
 export * from './document/index.js';
 export * from './case/models.js';
+export * from './case/contracts.js';

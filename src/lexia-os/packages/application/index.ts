@@ -1,5 +1,6 @@
 export * from './contracts/index.js';
 export * from './usecases/ProcessDocumentUseCase.js';
+export * from './usecases/ProcessCaseUseCase.js';
 export * from './queries/GetCaseHeader.js';
 export * from './projectors/CaseHeaderProjector.js';
 export * from './validators/DocumentValidator.js';
