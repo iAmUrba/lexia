@@ -1,5 +1,6 @@
 import { Document, DocumentIndexAsset } from '@lexia/domain';
-import { CaseSummaryView } from '../contracts/CaseSummaryView.js';
+import { ParticipantsAsset } from '@lexia/domain/document/participants/models.js';
+import { CaseSummaryView, ParticipantView } from '../contracts/CaseSummaryView.js';
 import { CaseHeaderProjector } from './CaseHeaderProjector.js';
 
 export class CaseSummaryProjector {
@@ -7,24 +8,60 @@ export class CaseSummaryProjector {
 
   project(document: Document): CaseSummaryView {
     const header = this.headerProjector.project(document);
-    const indexAsset = document.assets.latest<DocumentIndexAsset>('DocumentIndex');
     
-    // Extraer personas de manera preliminar
-    const people = indexAsset?.people?.map(p => p.name) || [];
+    // Obtenemos el asset final de participantes
+    const participantsAsset = document.assets.latest<ParticipantsAsset>('Participants');
     
-    // Extraer warnings a partir de las ejecuciones o assets (para V1 usaremos los de la calidad si existen o los state warnings)
-    // Pero lo más limpio por ahora es obtener los del state
-    // Para no acoplarnos al Evaluator aquí, usamos executions si están disponibles
-    let warnings: string[] = [];
+    let participants: ParticipantView[] = [];
+    let observations: string[] = [];
+
+    if (participantsAsset) {
+      participants = participantsAsset.participants.map(p => {
+        // Encontrar los roles asignados a este participante
+        const assignments = participantsAsset.assignments.filter(a => a.participantId === p.id);
+        const roles = assignments.map(a => {
+          const def = participantsAsset.roles.find(r => r.id === a.roleId);
+          return def ? def.name : 'Desconocido';
+        });
+
+        // Contar cuántas menciones tiene en total (buscando en los links)
+        const links = participantsAsset.links.filter(l => l.participantId === p.id);
+        
+        // Asignamos una confianza mínima o promedio de los enlaces
+        const confidence = links.length > 0 
+          ? links.reduce((sum, l) => sum + l.confidence, 0) / links.length 
+          : 0;
+
+        return {
+          participantId: p.id,
+          name: p.canonicalName,
+          roles: Array.from(new Set(roles)), // Deduplicar nombres de roles
+          mentionCount: links.length,
+          confidence: Math.round(confidence)
+        };
+      });
+
+      // Calcular algunas observaciones básicas
+      const unresolvedLinks = participantsAsset.links.filter(l => l.strategy === 'UNKNOWN'); // Placeholder
+      if (participants.length === 0) {
+        observations.push('No se detectaron participantes en el documento.');
+      }
+    } else {
+      observations.push('Análisis de participantes no completado o indisponible.');
+    }
+
+    // Agregar warnings del flujo (ej. errores de validación)
     if (document.executions) {
-      warnings = document.executions.flatMap(e => e.warnings);
+      const warnings = document.executions.flatMap(e => e.warnings);
+      observations.push(...warnings);
     }
 
     return {
       header,
-      people,
+      documentsProcessed: 1, // Por ahora LexIA solo procesa 1 documento
+      participants,
       timeline: document.timeline.operations,
-      warnings
+      observations
     };
   }
 }
