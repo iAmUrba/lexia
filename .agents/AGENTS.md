@@ -29,3 +29,6 @@
 
 # Arranque en Windows
 - **Comando de Inicio:** A partir de ahora, para encender el servidor en entornos Windows, se DEBE utilizar estrictamente el archivo `start_lexia.bat`.
+
+# Idioma de Comunicación
+- **Regla Estricta (Solo Español):** Tienes estrictamente prohibido comunicarte en inglés. Todas tus respuestas, explicaciones, comentarios y mensajes dirigidos al usuario deben generarse exclusivamente en ESPAÑOL. Esta regla es absoluta e inquebrantable.
