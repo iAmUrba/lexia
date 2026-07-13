@@ -55,11 +55,34 @@ export interface ParticipantMentionsAsset extends DocumentAsset {
 }
 
 /**
+ * Objeto intermedio (candidato) durante el proceso de Entity Linking.
+ * No es todavía un Participant definitivo.
+ */
+export interface ParticipantCandidate {
+  readonly id: string;
+  readonly normalizedName: string;
+  readonly aliases: string[];
+  readonly mentions: ParticipantMention[];
+  readonly confidence: ConfidenceScore;
+}
+
+/**
+ * Enlace inmutable que relaciona una Mención original con un Participante consolidado.
+ */
+export interface ParticipantLink {
+  readonly mentionId: string;
+  readonly participantId: string;
+  readonly confidence: number;
+  readonly strategy: 'EXACT_NAME' | 'DOCUMENT_NUMBER' | 'ROLE_AND_NAME' | 'MANUAL' | 'UNKNOWN';
+}
+
+/**
  * Asset producido por el Entity Linker (Fase 8.3) que consolida las menciones en participantes reales y asigna roles.
  */
 export interface ParticipantsAsset extends DocumentAsset {
-  readonly assetType: 'Participants'; // Requiere extender AssetType
+  readonly assetType: 'Participants';
   readonly roles: RoleDefinition[];
   readonly participants: Participant[];
+  readonly links: ParticipantLink[];
   readonly assignments: ParticipantRoleAssignment[];
 }
