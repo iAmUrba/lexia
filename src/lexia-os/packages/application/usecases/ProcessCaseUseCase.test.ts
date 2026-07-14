@@ -6,23 +6,19 @@ import { Case, CaseId } from '@lexia/domain';
 import { ProcessDocumentUseCase } from './ProcessDocumentUseCase.js';
 import { Document, DocumentIndexAsset } from '@lexia/domain';
 
-// Mock simple de CaseRepository en memoria
 class InMemoryCaseRepository implements CaseRepository {
   private cases = new Map<string, Case>();
 
-  async save(caso: Case): Promise<void> {
-    this.cases.set(caso.id, caso);
-  }
+  async save(caso: Case): Promise<void> { this.cases.set(caso.id, caso); }
   async findById(id: CaseId): Promise<Case | null> { return this.cases.get(id) || null; }
   async findByRadicado(radicado: string): Promise<Case | null> { return null; }
   async findByParticipant(participantId: string): Promise<Case[]> { return []; }
   async findByDocument(documentId: string): Promise<Case | null> { return null; }
 }
 
-// Mock simple de ProcessDocumentUseCase
 class MockProcessDocumentUseCase extends ProcessDocumentUseCase {
   constructor() {
-    super({} as any, {} as any, {} as any); // dependencias en mock
+    super({} as any, {} as any, {} as any);
   }
 
   async process(filePath: string, domain: 'judicial' | 'general' = 'judicial'): Promise<Document> {
@@ -35,33 +31,43 @@ class MockProcessDocumentUseCase extends ProcessDocumentUseCase {
           if (type === 'DocumentIndex') {
             return { type: 'DocumentIndex', radicado: '11001-mock' } as any;
           }
+          if (type === 'ParticipantsAsset') {
+            return { type: 'ParticipantsAsset', participants: [
+              { id: `p-${filePath}`, normalizedName: 'Juan', confidence: 'HIGH', mentions: [] }
+            ] } as any;
+          }
           return null;
         }
       },
-      timeline: { operations: [] }
+      timeline: { operations: [{ timestamp: '2026', operation: 'Creation', executor: filePath }] }
     } as any;
   }
 }
 
-test('ProcessCaseUseCase - Orquestación de expediente', async () => {
+test('ProcessCaseUseCase - Integración E2E y ProcessCaseResult', async () => {
   const mockRepo = new InMemoryCaseRepository();
   const mockDocUseCase = new MockProcessDocumentUseCase();
   const useCase = new ProcessCaseUseCase(mockDocUseCase, mockRepo);
 
-  const { caso, report } = await useCase.execute(
+  const result = await useCase.execute(
     'case-xyz',
     { id: 'source-1', type: 'FOLDER', path: '/mocks' },
     ['file1.pdf', 'file2.pdf']
   );
 
-  assert.strictEqual(caso.id, 'case-xyz');
-  assert.strictEqual(caso.identifiers.radicado, '11001-mock');
-  assert.strictEqual(caso.documents.length, 2);
+  assert.strictEqual(result.caso.id, 'case-xyz');
+  assert.strictEqual(result.reports.documentsProcessed, 2);
   
-  assert.strictEqual(report.documentsProcessed, 2);
-  assert.strictEqual(report.warnings.length, 0);
+  // El primer Juan se crea, el segundo Juan se fusiona
+  assert.strictEqual(result.reports.participants.created, 1);
+  assert.strictEqual(result.reports.participants.merged, 1);
+  
+  // Debe tener un timeline consolidado (1 evento por documento = 2)
+  assert.strictEqual(result.reports.timeline.merged, 2);
 
-  const saved = await mockRepo.findById('case-xyz');
-  assert.ok(saved);
-  assert.strictEqual(saved?.documents.length, 2);
+  // El grafo debe contener los 2 docs + 1 participante + 2 eventos = 5 nodos
+  assert.strictEqual(result.graph.nodes.length, 5);
+
+  // El summary debe tener los participantes
+  assert.strictEqual(result.summary.participants.length, 1);
 });

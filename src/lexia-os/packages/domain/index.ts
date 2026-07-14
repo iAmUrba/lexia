@@ -221,3 +221,4 @@ export const createTutelaRecibidaEvent = (payload: { radicado: string; remitente
 export * from './document/index.js';
 export * from './case/models.js';
 export * from './case/contracts.js';
+export * from './xai/contracts.js';

@@ -1,0 +1,18 @@
+{
+  "identifiers": {
+    "radicado": "11001310500120230012300"
+  },
+  "participants": [
+    {
+      "name": "JUAN PEREZ",
+      "roles": ["JUEZ"]
+    }
+  ],
+  "timeline": [
+    {
+      "type": "AUTO_ADMITE_DEMANDA"
+    }
+  ],
+  "observations": [],
+  "mergeConflicts": 0
+}
