@@ -12,17 +12,21 @@ export class DocxtemplaterEngine implements TemplateEngine {
       linebreaks: true,
     });
 
-    // We pass the flat fields and sections/evidence if needed
-    // Assuming the word template uses markers like {{radicado}} mapped to model.fields.radicado
-    doc.render({
-      ...model.fields,
-      title: model.title,
-      // For more complex templates, we can pass the whole model
-      // but keeping it flat at the top level is usually easier for the template designers
-      header: model.fields.header || {},
-      hearing: model.fields.hearing || {},
-      participants: model.fields.participants || {}
-    });
+    // Reconstruir un objeto anidado a partir de DocumentField[] (ej. "header.radicado")
+    const templateData: any = { title: model.title };
+    
+    for (const field of model.fields) {
+      const parts = field.id.split('.');
+      let current = templateData;
+      for (let i = 0; i < parts.length - 1; i++) {
+        const part = parts[i];
+        if (!current[part]) current[part] = {};
+        current = current[part];
+      }
+      current[parts[parts.length - 1]] = field.value;
+    }
+
+    doc.render(templateData);
 
     const buf = doc.getZip().generate({
       type: 'nodebuffer',

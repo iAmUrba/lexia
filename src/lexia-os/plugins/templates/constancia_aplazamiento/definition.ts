@@ -4,24 +4,73 @@ class ConstanciaAplazamientoProjector implements DocumentProjector {
   project(caso: Case): DocumentModel {
     return {
       title: 'Constancia de Aplazamiento',
-      fields: {
-        header: {
-          radicado: caso.identifiers.radicado || 'SIN RADICADO',
-          juzgado: 'JUZGADO PENAL DEL CIRCUITO'
+      fields: [
+        {
+          id: 'header.radicado',
+          value: caso.identifiers.radicado || 'SIN RADICADO',
+          datatype: 'string',
+          required: true,
+          editable: false,
+          evidence: [] // Aquí se extraerá la evidencia del caso en el futuro
         },
-        hearing: {
-          date: new Date().toLocaleDateString('es-CO'),
-          type: 'Formulación de Imputación',
-          reason: 'Inasistencia de la defensa'
+        {
+          id: 'header.juzgado',
+          value: 'JUZGADO PENAL DEL CIRCUITO',
+          datatype: 'string',
+          required: true,
+          editable: true,
+          evidence: []
         },
-        participants: {
-          judge: 'JUAN PEREZ (Juez)',
-          prosecutor: 'MARIA GOMEZ (Fiscal)',
-          secretary: 'CARLOS RAMIREZ (Secretario)'
+        {
+          id: 'hearing.date',
+          value: new Date().toLocaleDateString('es-CO'),
+          datatype: 'date',
+          required: true,
+          editable: true,
+          evidence: []
+        },
+        {
+          id: 'hearing.type',
+          value: 'Formulación de Imputación',
+          datatype: 'string',
+          required: true,
+          editable: true,
+          evidence: []
+        },
+        {
+          id: 'hearing.reason',
+          value: 'Inasistencia de la defensa',
+          datatype: 'string',
+          required: true,
+          editable: true,
+          evidence: []
+        },
+        {
+          id: 'participants.judge',
+          value: 'JUAN PEREZ (Juez)',
+          datatype: 'string',
+          required: true,
+          editable: false,
+          evidence: []
+        },
+        {
+          id: 'participants.prosecutor',
+          value: 'MARIA GOMEZ (Fiscal)',
+          datatype: 'string',
+          required: true,
+          editable: false,
+          evidence: []
+        },
+        {
+          id: 'participants.secretary',
+          value: 'CARLOS RAMIREZ (Secretario)',
+          datatype: 'string',
+          required: true,
+          editable: false,
+          evidence: []
         }
-      },
-      sections: [],
-      evidence: []
+      ],
+      sections: []
     };
   }
 }

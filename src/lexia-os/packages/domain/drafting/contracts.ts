@@ -7,15 +7,23 @@ export interface DocumentSection {
   readonly content: string;
 }
 
+export interface DocumentField {
+  readonly id: string;
+  readonly value: any;
+  readonly datatype: 'string' | 'number' | 'date' | 'boolean' | 'object' | 'array';
+  readonly required: boolean;
+  readonly editable: boolean;
+  readonly evidence: EvidenceReference[];
+}
+
 /**
  * Modelo semántico del documento que se quiere generar.
  * Agnóstico al formato (DOCX, PDF, HTML).
  */
 export interface DocumentModel {
   readonly title: string;
-  readonly fields: Record<string, unknown>;
+  readonly fields: DocumentField[];
   readonly sections: DocumentSection[];
-  readonly evidence: EvidenceReference[];
 }
 
 /**
