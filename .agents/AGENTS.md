@@ -32,3 +32,11 @@
 
 # Idioma de ComunicaciÃ³n
 - **Regla Estricta (Solo EspaÃ±ol):** Tienes estrictamente prohibido comunicarte en inglÃ©s. Todas tus respuestas, explicaciones, comentarios y mensajes dirigidos al usuario deben generarse exclusivamente en ESPAÃ‘OL. Esta regla es absoluta e inquebrantable.
+
+# Dinámica de Trabajo y Roles (AG vs Santiago)
+- **Separación Estricta:** AG (Antigravity) implementa código. Santiago actúa como arquitecto/revisor técnico y es el único que puede subir archivos o probar localmente la aplicación.
+- **Etiquetas de Comunicación:** Se deben respetar las siguientes etiquetas en la comunicación:
+  - `?? ACCIÓN PARA AG`: Instrucciones explícitas que el agente debe implementar en código.
+  - `?? ACCIÓN PARA SANTIAGO`: Pasos que requieren intervención humana (subir PDFs, plantillas, ejecutar comandos manuales). El agente debe listar estas tareas y esperar.
+  - `?? REVISIÓN`: Puntos de arquitectura, dudas o decisiones que el agente requiere discutir con Santiago antes de continuar.
+- El agente NUNCA debe decir "sube el archivo" o "ejecuta el comando" asumiendo que Santiago tiene acceso inmediato a los comandos si no se ha usado la convención, y debe siempre devolver la pelota usando `?? ACCIÓN PARA SANTIAGO` cuando esté bloqueado por un archivo.
