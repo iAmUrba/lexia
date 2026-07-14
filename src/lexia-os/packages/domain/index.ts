@@ -223,3 +223,4 @@ export * from './case/models.js';
 export * from './case/contracts.js';
 export * from './xai/contracts.js';
 export * from './drafting/contracts.js';
+export * from './drafting/validator.js';

@@ -1,0 +1,10 @@
+{
+  "name": "@lexia/renderers-docx-templater",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "dependencies": {
+    "@lexia/domain": "workspace:*",
+    "docxtemplater": "^3.46.1",
+    "pizzip": "^3.1.7"
+  }
+}

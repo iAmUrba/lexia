@@ -5,8 +5,20 @@ class ConstanciaAplazamientoProjector implements DocumentProjector {
     return {
       title: 'Constancia de Aplazamiento',
       fields: {
-        radicado: caso.identifiers.radicado || 'SIN RADICADO',
-        fecha: new Date().toLocaleDateString('es-CO')
+        header: {
+          radicado: caso.identifiers.radicado || 'SIN RADICADO',
+          juzgado: 'JUZGADO PENAL DEL CIRCUITO'
+        },
+        hearing: {
+          date: new Date().toLocaleDateString('es-CO'),
+          type: 'Formulación de Imputación',
+          reason: 'Inasistencia de la defensa'
+        },
+        participants: {
+          judge: 'JUAN PEREZ (Juez)',
+          prosecutor: 'MARIA GOMEZ (Fiscal)',
+          secretary: 'CARLOS RAMIREZ (Secretario)'
+        }
       },
       sections: [],
       evidence: []
