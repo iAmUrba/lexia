@@ -15,22 +15,33 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:metrics": "tsx --test packages/application/usecases/ProcessCaseUseCase.regression.test.ts",
-    "dev": "concurrently \"npm run dev -w packages/web\" \"npx tsx watch packages/server/server.ts\""
+    "dev": "concurrently \"npm run dev -w packages/web\" \"npx tsx watch packages/server/server.ts\"",
+    "start": "concurrently \"npm run start -w packages/web\" \"npx tsx packages/server/server.ts\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@azure/msal-node": "^5.4.0",
     "@electric-sql/pglite": "^0.5.4",
     "@fastify/cors": "^11.2.0",
     "@fastify/multipart": "^10.1.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7",
+    "better-sqlite3": "^12.11.1",
+    "cors": "^2.8.6",
     "drizzle-orm": "^0.45.2",
+    "exceljs": "^4.4.0",
+    "express": "^5.2.1",
     "fastify": "^5.10.0",
+    "isomorphic-fetch": "^3.0.0",
     "pdf-parse": "^1.1.1",
-    "tesseract.js": "^7.0.0"
+    "tesseract.js": "^7.0.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
     "@types/supertest": "^7.2.0",
     "concurrently": "^10.0.3",
     "drizzle-kit": "^0.31.10",

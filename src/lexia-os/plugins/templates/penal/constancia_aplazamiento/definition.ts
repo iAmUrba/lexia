@@ -6,67 +6,107 @@ class ConstanciaAplazamientoProjector implements DocumentProjector {
       title: 'Constancia de Aplazamiento',
       fields: [
         {
-          id: 'header.radicado',
-          value: caso.identifiers.radicado || 'SIN RADICADO',
-          datatype: 'string',
-          required: true,
-          editable: false,
-          evidence: [] // Aquí se extraerá la evidencia del caso en el futuro
-        },
-        {
-          id: 'header.juzgado',
-          value: 'JUZGADO PENAL DEL CIRCUITO',
+          id: 'fechaAudienciaTexto',
+          value: 'dieciséis (16) de octubre de 2025',
           datatype: 'string',
           required: true,
           editable: true,
           evidence: []
         },
         {
-          id: 'hearing.date',
-          value: new Date().toLocaleDateString('es-CO'),
-          datatype: 'date',
-          required: true,
-          editable: true,
-          evidence: []
-        },
-        {
-          id: 'hearing.type',
-          value: 'Formulación de Imputación',
+          id: 'horaAudienciaTexto',
+          value: '02:00 de la tarde',
           datatype: 'string',
           required: true,
           editable: true,
           evidence: []
         },
         {
-          id: 'hearing.reason',
-          value: 'Inasistencia de la defensa',
+          id: 'tipoAudiencia',
+          value: 'AUDIENCIA DE JUICIO ORAL',
           datatype: 'string',
           required: true,
           editable: true,
           evidence: []
         },
         {
-          id: 'participants.judge',
-          value: 'JUAN PEREZ (Juez)',
+          id: 'radicado',
+          value: caso.identifiers.radicado || '19001600060220210034100',
           datatype: 'string',
           required: true,
           editable: false,
           evidence: []
         },
         {
-          id: 'participants.prosecutor',
-          value: 'MARIA GOMEZ (Fiscal)',
+          id: 'procesadoNombre',
+          value: 'EDINSON CAVIEDES MARTINEZ',
           datatype: 'string',
           required: true,
           editable: false,
           evidence: []
         },
         {
-          id: 'participants.secretary',
-          value: 'CARLOS RAMIREZ (Secretario)',
+          id: 'procesadoId',
+          value: '1.072.423.774',
           datatype: 'string',
           required: true,
           editable: false,
+          evidence: []
+        },
+        {
+          id: 'delitos',
+          value: 'FABRICACIÓN, TRÁFICO O PORTE DE ARMAS, MUNICIONES DE USO RESTINGIDO, DE USO PRIVATIVO DE LAS FUERZAS ARMADAS O EXPLOSIVOS Y FABRICACIÓN, TRÁFICO, PORTE O TENENCIA DE ARMAS DE FUEGO, ACCESORIOS, PARTES O MUNICIONES',
+          datatype: 'string',
+          required: true,
+          editable: true,
+          evidence: []
+        },
+        {
+          id: 'solicitanteCargo',
+          value: 'Fiscal 5 Especializado (E)',
+          datatype: 'string',
+          required: true,
+          editable: true,
+          evidence: []
+        },
+        {
+          id: 'solicitanteNombre',
+          value: 'Dr. ÓSCAR EDUARDO CASTRILLON',
+          datatype: 'string',
+          required: true,
+          editable: true,
+          evidence: []
+        },
+        {
+          id: 'motivoAplazamiento',
+          value: 'la presente diligencia se cruza con audiencia programada en el despacho del cual es titular Fiscalía 6 Especializada',
+          datatype: 'string',
+          required: true,
+          editable: true,
+          evidence: []
+        },
+        {
+          id: 'fechaFirmaTexto',
+          value: 'dieciséis (16) del mes de octubre de dos mil veinticinco (2025)',
+          datatype: 'string',
+          required: true,
+          editable: true,
+          evidence: []
+        },
+        {
+          id: 'firmaNombre',
+          value: 'JUAN DAVID RAMOS RAMÍREZ',
+          datatype: 'string',
+          required: true,
+          editable: true,
+          evidence: []
+        },
+        {
+          id: 'firmaCargo',
+          value: 'AUXILIAR JUDICIAL',
+          datatype: 'string',
+          required: true,
+          editable: true,
           evidence: []
         }
       ],

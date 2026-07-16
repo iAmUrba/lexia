@@ -1,0 +1,73 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <title>Reporte Inspector - 19001600072420210007700</title>
+      <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; margin-bottom: 20px; }
+        .score { font-size: 2em; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: #f9f9f9; padding: 15px; border-radius: 5px; border-left: 4px solid #007bff; }
+        .card-danger { border-left-color: #dc3545; }
+        .card-warning { border-left-color: #ffc107; }
+        h3 { margin-top: 0; color: #555; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <div>
+            <h1>Expediente: 19001600072420210007700</h1>
+            <p><strong>Procesado:</strong> HOLMAN DANIEL GARCES LEDEZMA</p>
+            <p><strong>Juzgado:</strong> Juzgado Tercero Penal Del Circuito Especializado</p>
+          </div>
+          <div class="score">
+            🔴 0/100
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Estadísticas</h3>
+            <ul>
+              <li>PDFs: 2</li>
+              <li>Documentos Word: 0</li>
+              <li>Índices (Excel): 1</li>
+              <li>Peso Total: 0.08 MB</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Numeración</h3>
+            <ul>
+              <li>Último según Excel: <strong>106</strong></li>
+              <li>Último documento físico: <strong>003</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="card card-danger" style="margin-top: 20px;">
+          <h3 style="color: #dc3545;">🔴 RIESGOS DETECTADOS</h3>
+          <ul>
+            <li>🔴 El Excel no coincide con la carpeta física. No automatizar este expediente.</li>
+          </ul>
+        </div>
+        
+
+        
+        <div class="card card-warning" style="margin-top: 20px;">
+          <h3 style="color: #d39e00;">⚠️ HALLAZGOS Y HUECOS</h3>
+          <ul>
+            <li>⚠️ Inconsistencia de tope: Excel termina en 106, pero Carpeta en 003.</li><li>⚠️ Faltan 104 documento(s) físico(s) reportado(s) en el Excel: 2, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106</li><li>⚠️ Existen 1 documento(s) físico(s) NO registrados en el Excel: 0</li>
+          </ul>
+        </div>
+        
+      </div>
+    </body>
+    </html>
+    

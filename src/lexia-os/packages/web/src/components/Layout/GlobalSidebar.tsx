@@ -127,9 +127,9 @@ export default function GlobalSidebar() {
                 </Link>
               </li>
               <li>
-                <Link href="/automatizaciones" className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100 transition-all text-slate-600 font-medium group">
-                  <span className="text-slate-400 group-hover:scale-110 transition-transform">🤖</span>
-                  <span>Automatizaciones</span>
+                <Link href="/glosador" className="flex items-center gap-3 px-3 py-2 rounded-xl hover:bg-slate-100 transition-all text-slate-600 font-medium group">
+                  <span className="text-slate-400 group-hover:scale-110 transition-transform">✨</span>
+                  <span>LexIA Core</span>
                 </Link>
               </li>
             </ul>
@@ -205,9 +205,31 @@ export default function GlobalSidebar() {
                   }}
                   className="w-full flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100 rounded-xl transition-all group"
                 >
-                  <Settings size={16} className="text-slate-400 group-hover:text-blue-500 transition-colors" /> Ajustes
+                  <Settings size={16} className="text-slate-400 group-hover:text-blue-500 transition-colors" /> Preferencias
+                </button>
+                <button 
+                  onClick={() => {
+                    setIsUserMenuOpen(false);
+                    // Lógica futura para cambiar despacho
+                  }}
+                  className="w-full flex items-center gap-2.5 px-3 py-2 text-sm font-medium text-slate-300 hover:bg-slate-800 hover:text-slate-100 rounded-xl transition-all group"
+                >
+                  <span className="text-slate-400 group-hover:text-blue-500 transition-colors text-center w-[16px]">🏢</span> Cambiar despacho
                 </button>
               </div>
+              {(!user || user?.rol === 'admin' || true) && ( // Temporalmente visible para desarrollo
+                <div className="p-1.5 border-t border-slate-800/50">
+                  <button 
+                    onClick={() => {
+                      setIsUserMenuOpen(false);
+                      router.push('/admin');
+                    }}
+                    className="w-full flex items-center gap-2.5 px-3 py-2 text-sm font-bold text-indigo-400 hover:bg-indigo-950/50 hover:text-indigo-300 rounded-xl transition-all group"
+                  >
+                    <span className="text-indigo-500 group-hover:text-indigo-400 transition-colors text-center w-[16px]">⚙</span> Administración
+                  </button>
+                </div>
+              )}
               <div className="p-1.5 border-t border-slate-800/50 bg-slate-950/50">
                 <button 
                   onClick={() => {

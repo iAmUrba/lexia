@@ -1,0 +1,73 @@
+
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+      <meta charset="UTF-8">
+      <title>Reporte Inspector - DESCONOCIDO</title>
+      <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f4f7f6; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 900px; margin: auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #eaeaea; padding-bottom: 10px; margin-bottom: 20px; }
+        .score { font-size: 2em; font-weight: bold; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .card { background: #f9f9f9; padding: 15px; border-radius: 5px; border-left: 4px solid #007bff; }
+        .card-danger { border-left-color: #dc3545; }
+        .card-warning { border-left-color: #ffc107; }
+        h3 { margin-top: 0; color: #555; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <div class="header">
+          <div>
+            <h1>Expediente: DESCONOCIDO</h1>
+            <p><strong>Procesado:</strong> DESCONOCIDO</p>
+            <p><strong>Juzgado:</strong> DESCONOCIDO</p>
+          </div>
+          <div class="score">
+            🔴 25/100
+          </div>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <h3>Estadísticas</h3>
+            <ul>
+              <li>PDFs: 2</li>
+              <li>Documentos Word: 0</li>
+              <li>Índices (Excel): 1</li>
+              <li>Peso Total: 0.08 MB</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Numeración</h3>
+            <ul>
+              <li>Último según Excel: <strong>000</strong></li>
+              <li>Último documento físico: <strong>003</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        
+        <div class="card card-danger" style="margin-top: 20px;">
+          <h3 style="color: #dc3545;">🔴 RIESGOS DETECTADOS</h3>
+          <ul>
+            <li>🔴 Error leyendo el Excel: xlsx.readFile is not a function</li><li>🔴 El Excel no coincide con la carpeta física. No automatizar este expediente.</li>
+          </ul>
+        </div>
+        
+
+        
+        <div class="card card-warning" style="margin-top: 20px;">
+          <h3 style="color: #d39e00;">⚠️ HALLAZGOS Y HUECOS</h3>
+          <ul>
+            <li>⚠️ Inconsistencia de tope: Excel termina en 000, pero Carpeta en 003.</li><li>⚠️ Existen 3 documento(s) físico(s) NO registrados en el Excel: 0, 1, 3</li>
+          </ul>
+        </div>
+        
+      </div>
+    </body>
+    </html>
+    

@@ -40,6 +40,9 @@ import path from "path";
 import fastifyMultipart from "@fastify/multipart";
 import authRoutes from "../infrastructure/http/routes/auth.routes.js";
 import aiRoutes from "../infrastructure/http/routes/ai.routes.js";
+import glosadorRoutes from "../infrastructure/http/routes/glosador.routes.js";
+import settingsRoutes from "../infrastructure/http/routes/settings.routes.js";
+import m365Routes from "../infrastructure/http/routes/m365.routes.js";
 
 // Setup fastify multipart for file uploads
 app.register(fastifyMultipart, {
@@ -51,6 +54,9 @@ app.register(fastifyMultipart, {
 tutelaRoutes(app, resolver, queryService);
 app.register(agendaRoutes, { prefix: "/api/agenda" });
 app.register(authRoutes, { prefix: "/api/auth" });
+app.register(settingsRoutes, { prefix: "/api/settings" });
+app.register(m365Routes, { prefix: "/api/m365" });
+app.register(glosadorRoutes);
 aiRoutes(app);
 
 import { fileURLToPath } from "url";

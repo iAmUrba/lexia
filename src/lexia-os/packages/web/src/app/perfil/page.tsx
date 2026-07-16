@@ -34,7 +34,7 @@ export default function PerfilPage() {
             <h1 className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight mb-2">{user?.nombre_completo}</h1>
             <div className="flex items-center justify-center md:justify-start gap-2 text-blue-600 font-semibold mb-8">
               <Shield size={18} className="text-blue-500" />
-              <span>{user?.rol === 'admin' ? 'Administrador del Sistema' : 'Usuario Estándar'}</span>
+              <span>{(user as any)?.rol === 'admin' ? 'Administrador del Sistema' : 'Usuario Estándar'}</span>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
