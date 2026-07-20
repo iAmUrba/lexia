@@ -1,89 +1,182 @@
 import { ExtractedEvidence } from './EvidenceExtractor.js';
-import { StorageProvider } from '../StorageProvider/StorageProvider.js';
+import { ExpedienteRepository } from './ExpedienteRepository.js';
+import { EvidenceScorer, ExpedienteCandidate } from './Scoring/EvidenceScorer.js';
+import { Thresholds } from './Scoring/EvidenceWeights.js';
 
-export interface ResolutionResult {
-  status: 'READY' | 'MANUAL_REVIEW' | 'NOT_FOUND' | 'ADMINISTRATIVE';
-  folderId?: string;
-  message: string;
-  explanation: string[]; // Justificación paso a paso para la UI
+export enum ResolveStatus {
+  ENCONTRADO = 'ENCONTRADO',
+  POSIBLE = 'POSIBLE',
+  NO_ENCONTRADO = 'NO_ENCONTRADO'
+}
+
+export interface EvidenceChainStep {
+  tipo: string;
+  valor: string;
+  peso: number;
+  resultado: 'MATCH' | 'NO_MATCH' | 'CONFLICTO';
+}
+
+export enum ResolveReason {
+  EVIDENCIA_CONFLICTIVA = 'EVIDENCIA_CONFLICTIVA',
+  RADICADO_DUPLICADO = 'RADICADO_DUPLICADO',
+  GRAPH_UNAVAILABLE = 'GRAPH_UNAVAILABLE',
+  TIMEOUT = 'TIMEOUT',
+  INSUFFICIENT_CONFIDENCE = 'INSUFFICIENT_CONFIDENCE',
+  SQLITE_CORRUPT = 'SQLITE_CORRUPT',
+  NONE = 'NONE'
+}
+
+export interface ResolveTelemetry {
+    sqliteTimeMs: number;
+    graphTimeMs: number;
+    scoringTimeMs: number;
+    totalTimeMs: number;
+}
+
+export interface InvestigationReport {
+    documentId: string;
+    engineVersion: string;
+    startedAt: string;
+    finishedAt: string;
+    extractorEvidence: ExtractedEvidence;
+    resolverResult: ResolveResult;
+}
+
+export interface ResolveResult {
+  estado: ResolveStatus;
+  reason?: ResolveReason;
+  expedienteId: string | null;
+  rutaExpediente: string | null;
+  rutaConocimiento: string | null;
+  cadenaDeEvidencias: EvidenceChainStep[];
+  confianza: number;
+  telemetry: ResolveTelemetry;
 }
 
 export class EvidenceResolver {
-  
-  constructor(private storageProvider: StorageProvider) {}
+  private repository: ExpedienteRepository;
+  private scorer: EvidenceScorer;
 
-  async resolve(evidence: ExtractedEvidence): Promise<ResolutionResult> {
-    const explanation: string[] = [];
+  constructor(repository: ExpedienteRepository, scorer: EvidenceScorer) {
+      this.repository = repository;
+      this.scorer = scorer;
+  }
+
+  /**
+   * Orquesta la resolución del expediente buscando candidatos y puntuándolos.
+   */
+  public async resolve(evidence: ExtractedEvidence): Promise<ResolveResult> {
+    const start = performance.now();
     
-    // 1. Clasificación Previa (¿Es Procesal?)
-    const isProcesal = evidence.radicados.length > 0 || evidence.spoa.length > 0 || evidence.procesados.length > 0 || evidence.fechas.length > 0;
+    // 1. Obtener candidatos del repositorio
+    const { candidates, telemetry: repoTelemetry } = await this.repository.findCandidates(evidence);
     
-    if (!isProcesal) {
-      explanation.push("✖ No se encontraron indicios procesales (radicado, SPOA, nombres, fechas).");
-      explanation.push("✔ Clasificado como documento administrativo.");
-      return { status: 'ADMINISTRATIVE', message: 'Documento Administrativo', explanation };
+    // 2. Puntuar candidatos
+    const scoreStart = performance.now();
+    const scoredCandidates = candidates.map(c => {
+        return {
+            candidate: c,
+            score: this.scorer.score(evidence, c)
+        };
+    });
+    
+    // Ordenar de mayor a menor puntaje
+    scoredCandidates.sort((a, b) => b.score.totalScore - a.score.totalScore);
+    const scoringTimeMs = Math.round(performance.now() - scoreStart);
+
+    let estado = ResolveStatus.NO_ENCONTRADO;
+    let reason = ResolveReason.NONE;
+    let bestCandidate: ExpedienteCandidate | null = null;
+    let bestScoreObj = null;
+
+    if (repoTelemetry.error === 'TIMEOUT') {
+        estado = ResolveStatus.NO_ENCONTRADO;
+        reason = ResolveReason.TIMEOUT;
+        return this.buildResult(estado, reason, null, null, [], 0, start, scoreStart, repoTelemetry);
+    }
+    if (repoTelemetry.error === 'GRAPH_UNAVAILABLE') {
+        estado = ResolveStatus.NO_ENCONTRADO;
+        reason = ResolveReason.GRAPH_UNAVAILABLE;
+        return this.buildResult(estado, reason, null, null, [], 0, start, scoreStart, repoTelemetry);
     }
 
-    // 2. Generación de Hipótesis
-    explanation.push("🔍 Fase 1: Generación de Hipótesis");
-    const hypotheses = new Set<string>();
+    if (scoredCandidates.length > 0) {
+        const top1 = scoredCandidates[0];
+        
+        if (top1.score.totalScore >= Thresholds.ENCONTRADO) {
+            estado = ResolveStatus.ENCONTRADO;
+            bestCandidate = top1.candidate;
+            bestScoreObj = top1.score;
 
-    if (evidence.radicados.length > 0) {
-      explanation.push(`   - Buscando radicado: ${evidence.radicados[0]}`);
-      const matches = await this.storageProvider.findExpedienteFolders(evidence.radicados[0]);
-      matches.forEach(m => hypotheses.add(m));
+            if (scoredCandidates.length > 1) {
+                const top2 = scoredCandidates[1];
+                const diff = top1.score.totalScore - top2.score.totalScore;
+                
+                if (diff === 0 && top1.score.totalScore === top2.score.totalScore) {
+                     estado = ResolveStatus.POSIBLE;
+                     reason = ResolveReason.RADICADO_DUPLICADO;
+                } else {
+                     const hasExplicitConflict = top1.score.chain.some(s => s.resultado === 'CONFLICTO');
+                     if (diff <= Thresholds.CONFLICTO_MARGEN || hasExplicitConflict) {
+                         estado = ResolveStatus.POSIBLE;
+                         reason = ResolveReason.EVIDENCIA_CONFLICTIVA;
+                     }
+                }
+            } else {
+                 const hasExplicitConflict = top1.score.chain.some(s => s.resultado === 'CONFLICTO');
+                 if (hasExplicitConflict) {
+                     estado = ResolveStatus.POSIBLE;
+                     reason = ResolveReason.EVIDENCIA_CONFLICTIVA;
+                 }
+            }
+        } else {
+            estado = ResolveStatus.POSIBLE;
+            reason = ResolveReason.INSUFFICIENT_CONFIDENCE;
+            
+            const hasExplicitConflict = top1.score.chain.some(s => s.resultado === 'CONFLICTO');
+            if (hasExplicitConflict) {
+                reason = ResolveReason.EVIDENCIA_CONFLICTIVA;
+            }
+            
+            bestCandidate = top1.candidate;
+            bestScoreObj = top1.score;
+        }
     }
-    
-    if (evidence.spoa.length > 0 && hypotheses.size === 0) {
-      explanation.push(`   - Buscando SPOA: ${evidence.spoa[0]}`);
-      const matches = await this.storageProvider.findExpedienteFolders(evidence.spoa[0]);
-      matches.forEach(m => hypotheses.add(m));
-    }
 
-    if (evidence.procesados.length > 0 && hypotheses.size === 0) {
-      explanation.push(`   - Buscando procesado: ${evidence.procesados[0]}`);
-      const matches = await this.storageProvider.findExpedienteFolders(evidence.procesados[0]);
-      matches.forEach(m => hypotheses.add(m));
-    }
+    return this.buildResult(
+        estado, 
+        reason, 
+        bestCandidate ? bestCandidate.id : null, 
+        bestCandidate?.path || null, 
+        bestScoreObj ? bestScoreObj.chain : [], 
+        bestScoreObj ? bestScoreObj.totalScore : 0, 
+        start, 
+        scoreStart, 
+        repoTelemetry
+    );
+  }
 
-    if (hypotheses.size === 0) {
-      explanation.push(`✖ No se generó ninguna hipótesis válida en OneDrive.`);
-      return { status: 'NOT_FOUND', message: 'Expediente no encontrado en la red', explanation };
-    }
-
-    explanation.push(`✔ Hipótesis generadas: ${hypotheses.size} posibles expedientes.`);
-
-    // 3. Fase de Verificación Exhaustiva (Artículo 14)
-    explanation.push("🛡️ Fase 2: Verificación Exhaustiva cruzada");
-    
-    const validHypotheses = Array.from(hypotheses);
-    
-    // Simulación de validación exhaustiva
-    // En producción, por cada ID en validHypotheses:
-    // 1. Abrimos su Excel de Índice.
-    // 2. Validamos el nombre, radicado, o SPOA contra el Excel.
-    // 3. Descartamos si hay contradicciones.
-    
-    if (validHypotheses.length > 1) {
-      explanation.push(`   - Analizando ${validHypotheses.length} índices de expedientes para descarte...`);
-      // Mock: descartamos simulando que miramos los Excels (en realidad al ser > 1 para el MVP vamos a manual review por seguridad)
-      explanation.push(`✖ No se pudo resolver la ambigüedad con certeza absoluta.`);
-      return { 
-        status: 'MANUAL_REVIEW', 
-        message: 'Ambigüedad: Múltiples expedientes compatibles',
-        explanation
+  private buildResult(estado: ResolveStatus, reason: ResolveReason, expedienteId: string | null, rutaExpediente: string | null, cadenaDeEvidencias: EvidenceChainStep[], confianza: number, start: number, scoreStart: number, repoTelemetry: any): ResolveResult {
+      const scoringTimeMs = Math.round(performance.now() - scoreStart);
+      const totalTimeMs = Math.round(performance.now() - start);
+      return {
+          estado,
+          reason,
+          expedienteId,
+          rutaExpediente,
+          rutaConocimiento: this.inferConocimientoPath(rutaExpediente),
+          cadenaDeEvidencias,
+          confianza,
+          telemetry: {
+              ...repoTelemetry,
+              scoringTimeMs,
+              totalTimeMs
+          }
       };
-    }
+  }
 
-    const finalFolder = validHypotheses[0];
-    explanation.push(`✔ Expediente único confirmado. Identidad verificada contra las fuentes disponibles.`);
-    
-    return {
-      status: 'READY',
-      folderId: finalFolder,
-      message: 'Expediente Confirmado (Verificación Exhaustiva)',
-      explanation
-    };
+  private inferConocimientoPath(basePath: string | null): string | null {
+    if (!basePath) return null;
+    return `${basePath}/CONOCIMIENTO`;
   }
 }
-

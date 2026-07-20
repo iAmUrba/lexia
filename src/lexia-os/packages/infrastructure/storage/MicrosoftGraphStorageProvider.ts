@@ -1,38 +1,40 @@
 import { StorageProvider } from '../../domain/glosador/StorageProvider/StorageProvider.js';
-import { Client } from '@microsoft/microsoft-graph-client';
+import { getSharePointHeaders } from '../http/routes/m365.routes.js';
 import fs from 'fs';
 import path from 'path';
 
 export class MicrosoftGraphStorageProvider implements StorageProvider {
-  private client: Client;
   private inputFolderId: string;
 
   constructor(accessToken: string, inputFolderId: string) {
-    this.client = Client.init({
-      authProvider: (done) => done(null, accessToken)
-    });
+    // ignoramos el accessToken porque ahora usamos las cookies directamente
     this.inputFolderId = inputFolderId;
   }
 
   async findExpedienteFolders(radicado: string): Promise<string[]> {
-    // Buscar en todo el OneDrive usando search()
     try {
-      const result = await this.client.api(`/me/drive/root/search(q='${radicado}')`).get();
-      // Filtrar solo las carpetas
+      const res = await fetch(`https://graph.microsoft.com/v1.0/me/drive/root/search(q='${radicado}')`, {
+        headers: getSharePointHeaders()
+      });
+      if (!res.ok) return [];
+      const result = await res.json();
       const folders = result.value.filter((item: any) => item.folder);
-      return folders.map((f: any) => f.id); // Devolvemos el Graph ID de las carpetas encontradas
+      return folders.map((f: any) => f.id);
     } catch (e: any) {
-      console.error('Error buscando expediente en Graph:', e.message);
+      console.error('Error buscando expediente en SharePoint:', e.message);
       return [];
     }
   }
 
   async listFilesInFolder(folderPath: string): Promise<string[]> {
-    // folderPath aquí será tratado como el Folder ID
     try {
-      const items = await this.client.api(`/me/drive/items/${folderPath}/children`).get();
+      const res = await fetch(`https://graph.microsoft.com/v1.0/me/drive/items/${folderPath}/children`, {
+        headers: getSharePointHeaders()
+      });
+      if (!res.ok) return [];
+      const items = await res.json();
       const files = items.value.filter((item: any) => item.file && item.name.toLowerCase().endsWith('.pdf'));
-      return files.map((f: any) => f.id); // Retornamos los File IDs
+      return files.map((f: any) => f.id);
     } catch (e: any) {
       console.error('Error listando archivos:', e.message);
       return [];
@@ -41,7 +43,11 @@ export class MicrosoftGraphStorageProvider implements StorageProvider {
 
   async getFileMetadata(filePath: string): Promise<{ size: number; mtime: Date }> {
     try {
-      const item = await this.client.api(`/me/drive/items/${filePath}`).get();
+      const res = await fetch(`https://graph.microsoft.com/v1.0/me/drive/items/${filePath}`, {
+        headers: getSharePointHeaders()
+      });
+      if (!res.ok) throw new Error('Not found');
+      const item = await res.json();
       return {
         size: item.size,
         mtime: new Date(item.lastModifiedDateTime)
@@ -52,32 +58,41 @@ export class MicrosoftGraphStorageProvider implements StorageProvider {
   }
 
   async moveFile(sourcePath: string, destPath: string, newFileName: string): Promise<void> {
-    // Mover y renombrar en Microsoft Graph
-    // sourcePath = File ID
-    // destPath = Target Folder ID
     try {
-      await this.client.api(`/me/drive/items/${sourcePath}`).patch({
-        name: newFileName,
-        parentReference: {
-          id: destPath
-        }
+      const res = await fetch(`https://graph.microsoft.com/v1.0/me/drive/items/${sourcePath}`, {
+        method: 'PATCH',
+        headers: {
+          ...getSharePointHeaders(),
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          name: newFileName,
+          parentReference: { id: destPath }
+        })
       });
+      if (!res.ok) {
+         const err = await res.text();
+         throw new Error(`Error moviendo archivo: ${err}`);
+      }
     } catch (e: any) {
-      console.error('Error moviendo archivo en Graph:', e.message);
+      console.error('Error moviendo archivo en SharePoint:', e.message);
       throw new Error(`Error moviendo a Microsoft 365: ${e.message}`);
     }
   }
 
-  // Método auxiliar para descargar el PDF a una ruta temporal de Node para el PdfAnalyzer
   async downloadFile(fileId: string): Promise<string> {
     try {
-      const item = await this.client.api(`/me/drive/items/${fileId}`).get();
+      const itemRes = await fetch(`https://graph.microsoft.com/v1.0/me/drive/items/${fileId}`, {
+        headers: getSharePointHeaders()
+      });
+      if (!itemRes.ok) throw new Error('File not found');
+      const item = await itemRes.json();
       const downloadUrl = item['@microsoft.graph.downloadUrl'];
+      
       const response = await fetch(downloadUrl);
       const buffer = await response.arrayBuffer();
       
       const tempPath = path.join(process.cwd(), '.temp', `${fileId}.pdf`);
-      // Asegurar que el directorio .temp exista
       if (!fs.existsSync(path.dirname(tempPath))) {
         fs.mkdirSync(path.dirname(tempPath), { recursive: true });
       }

@@ -7,11 +7,11 @@ import { PdfAnalyzer } from '../../../domain/glosador/PdfAnalyzer/PdfAnalyzer.js
 import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
-import { getGlobalAccessToken } from './m365.routes.js';
+import { getGlobalAuthTokens } from './m365.routes.js';
 
 const __filenameServer = fileURLToPath(import.meta.url);
 const __dirnameServer = path.dirname(__filenameServer);
-const settingsFile = path.join(__dirnameServer, '../../../../../server/.data/settings.json');
+const settingsFile = path.join(__dirnameServer, '../../../server/.data/settings.json');
 
 export default async function glosadorRoutes(app: FastifyInstance) {
   app.get('/api/glosador/scan', async (request, reply) => {
@@ -27,13 +27,14 @@ export default async function glosadorRoutes(app: FastifyInstance) {
         return reply.code(400).send({ error: 'La carpeta de entrada no ha sido seleccionada en Microsoft 365.' });
       }
 
-      const token = getGlobalAccessToken();
-      if (!token) {
+      const tokens = getGlobalAuthTokens();
+      if (!tokens) {
         return reply.code(401).send({ error: 'Sesión de Microsoft 365 caducada. Por favor, conéctese de nuevo.' });
       }
 
-      const storageProvider = new MicrosoftGraphStorageProvider(token, inputFolderId);
+      const storageProvider = new MicrosoftGraphStorageProvider('cookie-auth', inputFolderId);
       const extractor = new EvidenceExtractor();
+
       const resolver = new EvidenceResolver(storageProvider);
       
       // Mantenemos Analyzer temporalmente porque ReviewBuilder lo usa para pintar en la UI

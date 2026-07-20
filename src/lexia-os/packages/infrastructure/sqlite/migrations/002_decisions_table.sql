@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS decisions (
+    hash TEXT PRIMARY KEY,
+    documentId TEXT NOT NULL,
+    eventId TEXT NOT NULL,
+    payload JSON NOT NULL,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+);

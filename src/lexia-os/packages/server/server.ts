@@ -29,7 +29,8 @@ const queryService = new UIQueryService(workRepo, docRepo, eventStore);
 // Enable CORS for frontend
 app.register(cors, { 
   origin: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS']
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Accept', 'Content-Type', 'Authorization', 'X-Lexia-Rol', 'X-Lexia-Despacho']
 });
 
 import fs from "fs";

@@ -1,0 +1,23 @@
+{
+  "engineVersion": "0.1.0",
+  "documentId": "895bd42a-f432-4cc3-9baf-776e144f46bb",
+  "startedAt": "1970-01-01T00:00:02.907Z",
+  "finishedAt": "2026-07-16T21:27:40.700Z",
+  "steps": [
+    {
+      "name": "DuplicateDetector",
+      "durationMs": 16,
+      "result": "OK"
+    },
+    {
+      "name": "OCR",
+      "durationMs": 603,
+      "result": "OK"
+    },
+    {
+      "name": "EvidenceExtractor",
+      "durationMs": 12,
+      "result": "OK"
+    }
+  ]
+}

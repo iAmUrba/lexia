@@ -130,8 +130,8 @@ export default function GlosadorPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 p-8 flex items-center justify-center">
-      <div className="max-w-3xl w-full space-y-6">
+    <div className="h-full overflow-y-auto bg-slate-50 p-8 flex justify-center custom-scrollbar">
+      <div className="max-w-3xl w-full space-y-6 my-auto py-12">
         <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-200">
           <h2 className="text-2xl font-black text-slate-800 mb-6 flex items-center gap-2">
             <Server className="text-blue-600" /> Diagnóstico de Viabilidad
