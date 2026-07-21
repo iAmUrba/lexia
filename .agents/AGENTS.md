@@ -50,3 +50,5 @@ Esta capa secundaria nace automáticamente gracias al `MemoryCrawler` (El Biblio
 **REGLA ANTI-ALUCINACIONES (RAG ESTRICTO):** LexIA JAMÁS contestará una pregunta jurídica, procesal o de estado usando únicamente la memoria del LLM (Ollama).
 El flujo obligatorio para responder al usuario es: 1) Entender Consulta -> 2) Buscar expediente en Memoria Operativa -> 3) Leer documentos reales relacionados -> 4) Extraer Hechos Crudos -> 5) El LLM **únicamente** redacta la respuesta basándose estrictamente en la evidencia extraída.
 Esto garantiza que LexIA actúe como un razonador documental y no como un generador de cuentos.
+
+> **REGLA DE EVIDENCIA DE LEXIA (Regla Cero para Producción):** Ninguna funcionalidad podrá declararse terminada, estable o lista para producción sin una evidencia reproducible (test automatizado, benchmark, integración real o ejecución documentada). Si no hay un script corriendo que lo demuestre, no podemos declararlo con certeza.

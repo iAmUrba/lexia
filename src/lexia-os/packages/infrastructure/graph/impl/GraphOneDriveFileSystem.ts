@@ -70,20 +70,82 @@ export class GraphOneDriveFileSystem implements IFileSystem {
     }
 
     async calculateHash(path: string, options?: { traceId?: string }): Promise<string> {
-        const buffer = await this.read(path, options);
-        return crypto.createHash('sha256').update(buffer).digest('hex');
+        try {
+            const url = `/drives/${this.driveId}/root${this.getPathSegment(path)}`;
+            const cleanUrl = url.endsWith(':/') ? url.substring(0, url.length - 2) : url;
+            const metadata = await this.graphClient.get<any>(cleanUrl, options);
+            if (metadata.file?.hashes?.sha256Hash) {
+                return metadata.file.hashes.sha256Hash.toLowerCase();
+            }
+            const buffer = await this.read(path, options);
+            return crypto.createHash('sha256').update(buffer).digest('hex');
+        } catch (e) {
+            this.mapError(e);
+        }
     }
 
     async read(path: string, options?: { traceId?: string }): Promise<Buffer> {
         try {
-            const url = `/drives/${this.driveId}/root${this.getPathSegment(path)}content`;
-            const response = await this.graphClient.get<any>(url, options);
-            if (Buffer.isBuffer(response)) return response;
-            if (typeof response === 'string') return Buffer.from(response);
-            return Buffer.from(JSON.stringify(response));
+            const url = `/drives/${this.driveId}/root${this.getPathSegment(path)}`;
+            const cleanUrl = url.endsWith(':/') ? url.substring(0, url.length - 2) : url;
+            
+            const startMeta = performance.now();
+            const metadata = await this.graphClient.get<any>(cleanUrl, options);
+            
+            const downloadUrl = metadata['@microsoft.graph.downloadUrl'];
+            if (!downloadUrl) {
+                throw new Error('Download URL not found in metadata');
+            }
+
+            // NOTA DE AUDITORÍA: OneDrive for Business / SharePoint usa quickXorHash.
+            // OneDrive Personal usa sha256Hash y crc32Hash.
+            // LexIA requiere SHA-256 para cadena de custodia. Si Graph no lo provee,
+            // lo calculamos localmente sobre el buffer descargado.
+            const graphSha256 = metadata.file?.hashes?.sha256Hash;
+            const graphQuickXor = metadata.file?.hashes?.quickXorHash;
+            
+            const response = await fetch(downloadUrl);
+            if (!response.ok) {
+                throw new Error(`Failed to download binary: ${response.statusText}`);
+            }
+            
+            // LIMITACIÓN CONOCIDA (Auditoría): arrayBuffer() carga todo el archivo en memoria.
+            // Para archivos de 100-300MB esto es subóptimo.
+            // TODO (Evolución): Refactorizar a Node.js Readable Streams (response.body)
+            // cuando se implemente el procesamiento por chunks.
+            const arrayBuffer = await response.arrayBuffer();
+            const buffer = Buffer.from(arrayBuffer);
+
+            const localSha256 = crypto.createHash('sha256').update(buffer).digest('hex').toUpperCase();
+
+            // Telemetría Estricta (Auditoría Custodia)
+            const providerHashType = graphSha256 ? 'sha256Hash' : (graphQuickXor ? 'quickXorHash' : 'none');
+            const providerHash = graphSha256 || graphQuickXor || 'N/A';
+            console.log(`\n[Graph File Telemetry - ${path}]`);
+            console.log(`providerHashType: ${providerHashType}`);
+            console.log(`providerHash: ${providerHash}`);
+            console.log(`localSha256: ${localSha256}`);
+            console.log(`downloadBytes: ${buffer.length}`);
+            console.log(`downloadMethod: @microsoft.graph.downloadUrl\n`);
+
+            // Si Graph nos dio un SHA-256 (ej. cuenta personal), lo verificamos estrictamente.
+            if (graphSha256) {
+                if (localSha256 !== graphSha256.toUpperCase()) {
+                    throw new Error(`Hash mismatch for ${path}. Expected ${graphSha256}, got ${localSha256}`);
+                }
+            } else if (graphQuickXor) {
+                // TODO: Implementar validación local de QuickXorHash si es estrictamente necesario.
+                // Por ahora, documentamos el quickXorHash y confiamos en el SHA-256 local.
+            }
+
+            return buffer;
         } catch (e) {
             this.mapError(e);
         }
+    }
+
+    async readStream(path: string, options?: { traceId?: string }): Promise<any> {
+        throw new Error('NotImplemented: Streaming read is reserved for future chunked processing evolution');
     }
 
     async write(path: string, data: Buffer, options?: { traceId?: string }): Promise<void> {
@@ -128,7 +190,7 @@ export class GraphOneDriveFileSystem implements IFileSystem {
             const url = `/drives/${this.driveId}/root${this.getPathSegment(source)}`;
             const cleanUrl = url.endsWith(':/') ? url.substring(0, url.length - 2) : url;
             
-            await this.graphClient.post(cleanUrl, {
+            await this.graphClient.patch(cleanUrl, {
                 parentReference: parentRef,
                 name: destName
             }, options);
@@ -141,7 +203,7 @@ export class GraphOneDriveFileSystem implements IFileSystem {
         try {
             const url = `/drives/${this.driveId}/root${this.getPathSegment(path)}`;
             const cleanUrl = url.endsWith(':/') ? url.substring(0, url.length - 2) : url;
-            await this.graphClient.post(`${cleanUrl}/delete`, {}, options);
+            await this.graphClient.delete(cleanUrl, options);
         } catch (e) {
             this.mapError(e);
         }
@@ -153,6 +215,21 @@ export class GraphOneDriveFileSystem implements IFileSystem {
             const response = await this.graphClient.get<any>(url, options);
             if (!response || !response.value) return [];
             return response.value.map((item: any) => item.name);
+        } catch (e) {
+            this.mapError(e);
+        }
+    }
+
+    /**
+     * Búsqueda en todo el Drive por nombre de archivo o carpeta
+     */
+    async search(query: string, options?: { traceId?: string }): Promise<any[]> {
+        try {
+            // Documentación Graph API: GET /drives/{drive-id}/root/search(q='{query}')
+            const url = `/drives/${this.driveId}/root/search(q='${encodeURIComponent(query)}')`;
+            const response = await this.graphClient.get<any>(url, options);
+            if (!response || !response.value) return [];
+            return response.value;
         } catch (e) {
             this.mapError(e);
         }

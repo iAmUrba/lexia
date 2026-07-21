@@ -1,6 +1,7 @@
 import { GraphClient } from '../infrastructure/graph/impl/GraphClient.js';
 import { GraphOneDriveFileSystem } from '../infrastructure/graph/impl/GraphOneDriveFileSystem.js';
-import { IGraphTransport, IGraphAuthProvider, GraphConfiguration, GraphApiError, LexIAEnvironment } from '../infrastructure/graph/contracts/GraphContracts.js';
+import { IGraphTransport, IGraphAuthProvider, GraphConfiguration, LexIAEnvironment } from '../infrastructure/graph/contracts/GraphContracts.js';
+import { GraphNotFoundError } from '../infrastructure/graph/errors.js';
 import * as crypto from 'crypto';
 
 class MockAuthProvider implements IGraphAuthProvider {
@@ -14,20 +15,24 @@ class MockTransport implements IGraphTransport {
     async request<T>(method: string, fullUrl: string, options?: any): Promise<{ status: number; data: T | null; headers: Record<string, string>; }> {
         const path = fullUrl.replace('https://graph.microsoft.com/v1.0', '');
         
-        // Simple mock of Graph API for OneDrive
+        if (fullUrl.startsWith('https://mock.download/')) {
+            const itemPath = fullUrl.replace('https://mock.download/', '');
+            if (!this.store.has(itemPath)) throw new GraphNotFoundError('Not found');
+            return { status: 200, data: this.store.get(itemPath).content as T, headers: {} };
+        }
+
         if (method === 'GET') {
             if (path.endsWith('content')) {
                 let itemPath = path.replace('content', '');
                 if (itemPath.endsWith(':/')) itemPath = itemPath.slice(0, -2);
-                if (!this.store.has(itemPath)) throw new GraphApiError(404, 'Not found', false);
+                if (!this.store.has(itemPath)) throw new GraphNotFoundError('Not found');
                 return { status: 200, data: this.store.get(itemPath).content as T, headers: {} };
             }
             if (path.endsWith('children')) {
                 const itemPath = path.replace('children', '');
                 return { status: 200, data: { value: Array.from(this.store.keys()).filter(k => k.startsWith(itemPath) && k !== itemPath).map(k => ({name: k.split('/').pop()})) } as T, headers: {} };
             }
-            
-            if (!this.store.has(path)) throw new GraphApiError(404, 'Not found', false);
+            if (!this.store.has(path)) throw new GraphNotFoundError('Not found');
             return { status: 200, data: this.store.get(path) as T, headers: {} };
         }
         
@@ -35,48 +40,53 @@ class MockTransport implements IGraphTransport {
             if (path.endsWith('content')) {
                 let itemPath = path.replace('content', '');
                 if (itemPath.endsWith(':/')) itemPath = itemPath.slice(0, -2);
-                this.store.set(itemPath, { size: options.body?.length || 0, lastModifiedDateTime: new Date().toISOString(), content: options.body });
+                this.store.set(itemPath, { 
+                    size: options.body?.length || 0, 
+                    lastModifiedDateTime: new Date().toISOString(), 
+                    content: options.body,
+                    '@microsoft.graph.downloadUrl': `https://mock.download/${itemPath}`
+                });
                 return { status: 200, data: null, headers: {} };
             }
             if (path.endsWith('copy')) {
                 let itemPath = path.replace('copy', '');
                 if (itemPath.endsWith(':/')) itemPath = itemPath.slice(0, -2);
-                if (!this.store.has(itemPath)) throw new GraphApiError(404, 'Not found', false);
-                
+                if (!this.store.has(itemPath)) throw new GraphNotFoundError('Not found');
                 let destParentClean = options.body.parentReference.path.replace('/drive/root', '/drives/drive1/root');
                 if (destParentClean.endsWith(':/')) destParentClean = destParentClean.slice(0, -2);
-                if (destParentClean === '/drives/drive1/root') {
-                    destParentClean = '/drives/drive1/root:';
-                }
+                if (destParentClean === '/drives/drive1/root') destParentClean = '/drives/drive1/root:';
                 let destPath = destParentClean + '/' + options.body.name;
                 if (destPath.endsWith(':/')) destPath = destPath.slice(0, -2);
                 this.store.set(destPath, { ...this.store.get(itemPath) });
                 return { status: 202, data: null, headers: {} };
             }
-            if (path.endsWith('/delete')) {
-                const itemPath = path.replace('/delete', '');
-                if (!this.store.has(itemPath)) throw new GraphApiError(404, 'Not found', false);
-                this.store.delete(itemPath);
-                return { status: 204, data: null, headers: {} };
-            }
-            // Move simulation (patch logic mapped to post in adapter)
+            throw new GraphNotFoundError('Not found');
+        }
+
+        if (method === 'PATCH') {
             if (this.store.has(path)) {
                 const item = this.store.get(path);
                 this.store.delete(path);
                 let destParentClean = options.body.parentReference.path.replace('/drive/root', '/drives/drive1/root');
                 if (destParentClean.endsWith(':/')) destParentClean = destParentClean.slice(0, -2);
-                if (destParentClean === '/drives/drive1/root') {
-                    destParentClean = '/drives/drive1/root:';
-                }
+                if (destParentClean === '/drives/drive1/root') destParentClean = '/drives/drive1/root:';
                 let destPath = destParentClean + '/' + options.body.name;
                 if (destPath.endsWith(':/')) destPath = destPath.slice(0, -2);
                 this.store.set(destPath, item);
                 return { status: 200, data: null, headers: {} };
             }
-            throw new GraphApiError(404, 'Not found', false);
+            throw new GraphNotFoundError('Not found');
         }
 
-        throw new Error('Method not mocked');
+        if (method === 'DELETE') {
+            if (this.store.has(path)) {
+                this.store.delete(path);
+                return { status: 204, data: null, headers: {} };
+            }
+            throw new GraphNotFoundError('Not found');
+        }
+
+        throw new Error('Method not mocked: ' + method + ' ' + fullUrl);
     }
 }
 
@@ -93,7 +103,6 @@ async function verifyGraphFileSystem() {
         const transport = new MockTransport();
         const client = new GraphClient(config, auth, transport);
         const fs = new GraphOneDriveFileSystem(client, 'drive1');
-        
         try {
             await fn(fs, transport);
             console.log(`✓ ${name}`);

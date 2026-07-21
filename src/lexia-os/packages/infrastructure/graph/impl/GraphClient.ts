@@ -6,6 +6,14 @@ import {
     GraphTelemetry
 } from '../contracts/GraphContracts.js';
 import * as crypto from 'crypto';
+import {
+    GraphConfigurationError,
+    GraphAuthenticationError,
+    GraphPermissionError,
+    GraphNotFoundError,
+    GraphRateLimitError,
+    GraphNetworkError
+} from '../errors.js';
 
 export class GraphClient {
     private readonly MAX_RETRIES = 3;
@@ -26,13 +34,25 @@ export class GraphClient {
         return this.executeWithRetry<T>('POST', path, { ...options, body });
     }
 
+    public async patch<T>(path: string, body: any, options?: { signal?: AbortSignal, traceId?: string }): Promise<T> {
+        return this.executeWithRetry<T>('PATCH', path, { ...options, body });
+    }
+
+    public async delete<T>(path: string, options?: { signal?: AbortSignal, traceId?: string }): Promise<T> {
+        return this.executeWithRetry<T>('DELETE', path, options || {});
+    }
+
     private async executeWithRetry<T>(
         method: string,
         path: string,
         options: { body?: any; signal?: AbortSignal; traceId?: string }
     ): Promise<T> {
         if (this.config.environment !== 'SANDBOX' && this.config.environment !== 'PRODUCTION') {
-            throw new Error('Entorno no configurado explícitamente');
+            throw new GraphConfigurationError('Entorno no configurado explícitamente');
+        }
+        
+        if (!this.config.tenantId || !this.config.clientId || !this.config.baseUrl || !this.config.apiVersion) {
+            throw new GraphConfigurationError('Faltan variables requeridas de configuración (tenantId, clientId, baseUrl o apiVersion)');
         }
 
         const correlationId = crypto.randomUUID();
@@ -75,21 +95,45 @@ export class GraphClient {
                     return response.data as T;
                 }
 
-                if (response.status === 401 || response.status === 403) {
+                if (response.status === 401) {
                     this.authProvider.invalidateToken();
-                    // We throw but we flag that telemetry is already sent
-                    const err = new GraphApiError(response.status, 'Authentication Error', false);
+                    const err = new GraphAuthenticationError('Token inválido o expirado');
+                    (err as any).telemetrySent = true;
+                    throw err;
+                }
+                
+                if (response.status === 403) {
+                    const err = new GraphPermissionError('Permisos insuficientes en Microsoft Graph');
                     (err as any).telemetrySent = true;
                     throw err;
                 }
 
-                if (response.status === 429 || response.status === 503 || response.status === 504) {
-                    const err = new GraphApiError(response.status, 'Transient Error', true);
+                if (response.status === 404) {
+                    const err = new GraphNotFoundError(`Recurso no encontrado: ${path}`);
                     (err as any).telemetrySent = true;
                     throw err;
                 }
 
-                const err = new GraphApiError(response.status, 'Graph API Error', false);
+                if (response.status === 409) {
+                    const err = new GraphNetworkError(`Conflicto de estado en Graph (409): ${path}`);
+                    (err as any).telemetrySent = true;
+                    throw err;
+                }
+
+                if (response.status === 412) {
+                    const err = new GraphNetworkError(`Precondición fallida en Graph (412): ${path}`);
+                    (err as any).telemetrySent = true;
+                    throw err;
+                }
+
+                if (response.status === 429 || response.status >= 500) {
+                    const err = new GraphRateLimitError(`Rate limit o error de servidor (${response.status}) en Microsoft Graph`);
+                    (err as any).telemetrySent = true;
+                    (err as any).retryable = true;
+                    throw err;
+                }
+
+                const err = new GraphNetworkError(`Graph API Error: ${response.status}`);
                 (err as any).telemetrySent = true;
                 throw err;
 
@@ -111,7 +155,7 @@ export class GraphClient {
                 }
 
                 if (!error.telemetrySent) {
-                    const status = error instanceof GraphApiError ? error.status : 0;
+                    const status = (error as any).status || 0;
                     this.onTelemetry({
                         traceId,
                         requestId,
@@ -124,7 +168,7 @@ export class GraphClient {
                     });
                 }
 
-                const isRetryable = error instanceof GraphApiError && error.retryable;
+                const isRetryable = error.retryable === true;
                 
                 if (!isRetryable || attempt === this.MAX_RETRIES) {
                     throw error;

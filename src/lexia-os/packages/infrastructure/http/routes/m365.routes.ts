@@ -18,7 +18,10 @@ const authFile = path.join(__dirnameServer, '../../../server/.data/.auth_state.j
 let globalAuthTokens: SPAuthTokens | null = null;
 if (fs.existsSync(authFile)) {
   try {
-    globalAuthTokens = JSON.parse(fs.readFileSync(authFile, 'utf-8'));
+    const data = JSON.parse(fs.readFileSync(authFile, 'utf-8'));
+    globalAuthTokens = {
+        accessToken: data.accessToken || data.token
+    };
   } catch (e) {
     console.error('Error leyendo .auth_state.json', e);
   }
@@ -146,6 +149,13 @@ export default async function m365Routes(app: FastifyInstance) {
       return reply.send(result);
     } catch (e: any) {
       console.error('Error in /diagnostic:', e.message);
+      if (e.message && e.message.includes('401')) {
+        globalAuthTokens = null;
+        if (fs.existsSync(authFile)) {
+          try { fs.unlinkSync(authFile); } catch (err) {}
+        }
+        return reply.code(401).send({ error: 'Token expirado' });
+      }
       return reply.code(500).send({ error: e.message || 'Error desconocido' });
     }
   });
@@ -183,6 +193,149 @@ export default async function m365Routes(app: FastifyInstance) {
     fs.writeFileSync(settingsFile, JSON.stringify(currentSettings, null, 2));
     
     return reply.send({ ok: true, message: `Carpeta ${folderName} guardada como entrada.` });
+  });
+
+  app.get('/inbox', async (request, reply) => {
+    if (!globalAuthTokens) return reply.code(401).send({ error: 'No autenticado' });
+    
+    let currentSettings: any = {};
+    if (fs.existsSync(settingsFile)) {
+      currentSettings = JSON.parse(fs.readFileSync(settingsFile, 'utf-8'));
+    }
+    
+    const folderId = currentSettings.inputFolderId;
+    if (!folderId) return reply.send({ files: [], folderName: null });
+
+    try {
+      const itemsRes = await fetch(`https://graph.microsoft.com/v1.0/me/drive/items/${folderId}/children`, {
+        headers: getSharePointHeaders()
+      });
+      if (!itemsRes.ok) throw new Error('Error leyendo bandeja de entrada');
+      
+      const itemsData = await itemsRes.json();
+      const allFiles: any[] = [];
+      
+      // Función auxiliar para agregar archivos
+      const addFile = (i: any, parentName?: string) => {
+        if (i.file && i.name.toLowerCase().endsWith('.pdf')) {
+          allFiles.push({
+            id: i.id,
+            name: i.name,
+            size: i.size,
+            lastModifiedDateTime: i.lastModifiedDateTime,
+            webUrl: i.webUrl,
+            folderPath: parentName || '' // Guardamos en qué carpeta estaba
+          });
+        }
+      };
+
+      // Recorremos los items de la raíz (e.g. JUAN DAVID)
+      for (const item of itemsData.value) {
+        addFile(item); // Si es un archivo directo, lo agregamos
+        
+        // Si es una carpeta (ej. fecha del día), entramos a buscar sus PDFs (1 nivel de profundidad)
+        if (item.folder) {
+          try {
+            const subItemsRes = await fetch(`https://graph.microsoft.com/v1.0/me/drive/items/${item.id}/children`, {
+              headers: getSharePointHeaders()
+            });
+            if (subItemsRes.ok) {
+              const subItemsData = await subItemsRes.json();
+              for (const subItem of subItemsData.value) {
+                addFile(subItem, item.name);
+              }
+            }
+          } catch (e) {
+            console.error(`Error leyendo subcarpeta ${item.name}`, e);
+          }
+        }
+      }
+        
+      // Ordenar por fecha de llegada (más antiguos primero, simulando una cola FIFO)
+      allFiles.sort((a, b) => new Date(a.lastModifiedDateTime).getTime() - new Date(b.lastModifiedDateTime).getTime());
+        
+      return reply.send({ files: allFiles, folderName: currentSettings.inputFolderName });
+    } catch (e: any) {
+      app.log.error(e);
+      return reply.code(500).send({ error: e.message });
+    }
+  });
+
+  app.post('/process-file', async (request, reply) => {
+    if (!globalAuthTokens) return reply.code(401).send({ error: 'No autenticado' });
+    const { fileId, fileName } = request.body as { fileId: string, fileName: string };
+    
+    if (!fileId) return reply.code(400).send({ error: 'fileId es requerido' });
+
+    try {
+      // Dynamic imports to avoid issues if run context differs
+      const { GraphClient } = await import('../../graph/impl/GraphClient.js');
+      const { GraphOneDriveFileSystem } = await import('../../graph/impl/GraphOneDriveFileSystem.js');
+      const { PdfTextExtractor } = await import('../../../domain/glosador/EvidenceSystem/PdfTextExtractor.js');
+      const { EvidenceExtractor } = await import('../../../domain/glosador/EvidenceSystem/EvidenceExtractor.js');
+      const { ExpedienteRepository } = await import('../../../domain/glosador/EvidenceSystem/ExpedienteRepository.js');
+      const { EvidenceScorer } = await import('../../../domain/glosador/EvidenceSystem/Scoring/EvidenceScorer.js');
+      const { EvidenceResolver } = await import('../../../domain/glosador/EvidenceSystem/EvidenceResolver.js');
+
+      const config = { environment: 'SANDBOX', tenantId: 'temp', clientId: 'temp', baseUrl: 'https://graph.microsoft.com', apiVersion: 'v1.0' };
+      const authProvider = { getAccessToken: async () => globalAuthTokens!.accessToken, invalidateToken: () => {} };
+      const transport = {
+          request: async (method: string, url: string, options: any) => {
+              const response = await fetch(url, { method, headers: options.headers, body: options.body ? JSON.stringify(options.body) : undefined });
+              const isJson = response.headers.get('content-type')?.includes('application/json');
+              const data = isJson ? await response.json() : await response.text();
+              return { status: response.status, headers: response.headers, data };
+          }
+      };
+      
+      const graphClient = new GraphClient(config as any, authProvider as any, transport as any);
+      const meResponse = await graphClient.get<any>('/me/drive');
+      const fsGraph = new GraphOneDriveFileSystem(graphClient, meResponse.id);
+
+      // Download file using exact ID path instead of filename path since we already have the ID
+      // To keep it simple with existing methods, GraphOneDriveFileSystem's read expects path. 
+      // We can fetch directly using the graphClient here:
+      const downloadRes = await graphClient.get<any>(`/me/drive/items/${fileId}`);
+      const downloadUrl = downloadRes['@microsoft.graph.downloadUrl'];
+      if (!downloadUrl) throw new Error('No se pudo obtener URL de descarga para el archivo');
+      
+      const fileStream = await fetch(downloadUrl);
+      const arrayBuffer = await fileStream.arrayBuffer();
+      const buffer = Buffer.from(arrayBuffer);
+
+      const pdfExtractor = new PdfTextExtractor();
+      const text = await pdfExtractor.extractText(buffer);
+      
+      const evidenceExtractor = new EvidenceExtractor();
+      const evidence = evidenceExtractor.extract(text);
+
+      const repository = new ExpedienteRepository(fsGraph);
+      const scorer = new EvidenceScorer();
+      const resolver = new EvidenceResolver(repository, scorer);
+      
+      const startTime = performance.now();
+      const report = await resolver.resolve(evidence);
+      const duration = Math.round(performance.now() - startTime);
+
+      return reply.send({
+        textExtractedLength: text.length,
+        textPreview: text.substring(0, 200).replace(/\n/g, ' '),
+        evidence: {
+          radicados: evidence.radicados.map(r => r.valor),
+          procesados: evidence.procesados.map(p => p.valor),
+          spoa: evidence.spoa.map(s => s.valor)
+        },
+        report: {
+          estado: report.estado,
+          expedienteId: report.expedienteId,
+          rutaExpediente: report.rutaExpediente
+        },
+        durationMs: duration
+      });
+    } catch (e: any) {
+      app.log.error(e);
+      return reply.code(500).send({ error: e.message });
+    }
   });
 
   app.get('/logout', async (request, reply) => {

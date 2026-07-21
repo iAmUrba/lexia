@@ -36,6 +36,7 @@ class MockFileSystem implements IFileSystem {
         return crypto.createHash('sha256').update(this.fileData).digest('hex');
     }
     async read(path: string): Promise<Buffer> { return Buffer.from(this.fileData); }
+    async readStream(path: string): Promise<any> { throw new Error('Not implemented'); }
     async write(path: string, data: Buffer): Promise<void> { this.fileData = Buffer.from(data); }
     async copyFile(): Promise<void> {}
     async deleteFile(): Promise<void> {}

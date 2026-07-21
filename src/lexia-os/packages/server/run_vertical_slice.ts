@@ -3,6 +3,7 @@ import { MigrationManager } from '../infrastructure/sqlite/MigrationManager.js';
 import { GraphClient } from '../infrastructure/graph/impl/GraphClient.js';
 import { GraphOneDriveFileSystem } from '../infrastructure/graph/impl/GraphOneDriveFileSystem.js';
 import { IGraphAuthProvider, IGraphTransport, GraphConfiguration, LexIAEnvironment, GraphApiError } from '../infrastructure/graph/contracts/GraphContracts.js';
+import { GraphNotFoundError, GraphRateLimitError, GraphAuthenticationError } from '../infrastructure/graph/errors.js';
 import { EvidenceExtractor } from '../domain/glosador/EvidenceSystem/EvidenceExtractor.js';
 import { EvidenceResolver } from '../domain/glosador/EvidenceSystem/EvidenceResolver.js';
 import { ExpedienteRepository } from '../domain/glosador/EvidenceSystem/ExpedienteRepository.js';
@@ -37,12 +38,12 @@ class MockTransport implements IGraphTransport {
             if (path.endsWith('content')) {
                 let itemPath = path.replace('content', '');
                 if (itemPath.endsWith(':/')) itemPath = itemPath.slice(0, -2);
-                if (!this.store.has(itemPath)) throw new GraphApiError(404, 'Not found', false);
+                if (!this.store.has(itemPath)) throw new GraphNotFoundError('Not found');
                 return { status: 200, data: this.store.get(itemPath).content as T, headers: {} };
             }
             let itemPath = path;
             if (itemPath.endsWith(':/')) itemPath = itemPath.slice(0, -2);
-            if (!this.store.has(itemPath)) throw new GraphApiError(404, 'Not found', false);
+            if (!this.store.has(itemPath)) throw new GraphNotFoundError('Not found');
             return { status: 200, data: this.store.get(itemPath) as T, headers: {} };
         }
         throw new Error(`Method ${method} not mocked for ${path}`);

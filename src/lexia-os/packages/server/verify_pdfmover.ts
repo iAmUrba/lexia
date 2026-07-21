@@ -28,8 +28,9 @@ class MockFileSystem implements IFileSystem {
     }
     
     // Unused in PdfMover
-    async read(): Promise<Buffer> { return Buffer.from(''); }
-    async write(): Promise<void> {}
+    async read(path: string): Promise<Buffer> { return Buffer.from('mock'); }
+    async readStream(path: string): Promise<any> { throw new Error('Not implemented'); }
+    async write(path: string, data: Buffer): Promise<void> {}
     async move(): Promise<void> {}
     async list(): Promise<string[]> { return []; }
     async stat(): Promise<any> { return {}; }

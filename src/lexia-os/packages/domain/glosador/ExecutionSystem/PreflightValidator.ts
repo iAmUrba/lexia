@@ -78,11 +78,11 @@ export class PreflightValidator {
 
         if (pdfSource) {
             try {
-                const pdfExists = await this.fs.exists(pdfSource, { traceId: plan.traceId } as any);
+                const pdfExists = await this.fs.exists(pdfSource);
                 addRule('PDF Exists', pdfExists, !pdfExists ? `No se encontró el PDF en ${pdfSource}` : undefined);
                 
                 if (pdfExists) {
-                    const pdfHash = await this.fs.calculateHash(pdfSource, { traceId: plan.traceId } as any);
+                    const pdfHash = await this.fs.calculateHash(pdfSource);
                     addRule('PDF Hash Match', pdfHash === plan.expectedPdfHash, pdfHash !== plan.expectedPdfHash ? `Hash esperado ${plan.expectedPdfHash}, actual ${pdfHash}` : undefined);
                 }
             } catch (e: any) {
@@ -94,11 +94,11 @@ export class PreflightValidator {
 
         // 4. Index Checks
         try {
-            const indexExists = await this.fs.exists(indicePath, { traceId: plan.traceId } as any);
+            const indexExists = await this.fs.exists(indicePath);
             addRule('Indice Exists', indexExists, !indexExists ? `No se encontró el índice en ${indicePath}` : undefined);
             
             if (indexExists) {
-                const indexHash = await this.fs.calculateHash(indicePath, { traceId: plan.traceId } as any);
+                const indexHash = await this.fs.calculateHash(indicePath);
                 addRule('Indice Hash Match', indexHash === expectedIndiceHash, indexHash !== expectedIndiceHash ? `Hash esperado ${expectedIndiceHash}, actual ${indexHash}` : undefined);
             }
         } catch (e: any) {

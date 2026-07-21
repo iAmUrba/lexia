@@ -1,6 +1,7 @@
 import { GraphClient } from '../infrastructure/graph/impl/GraphClient.js';
 import { GraphOneDriveFileSystem } from '../infrastructure/graph/impl/GraphOneDriveFileSystem.js';
 import { IGraphTransport, IGraphAuthProvider, GraphConfiguration, GraphApiError, LexIAEnvironment } from '../infrastructure/graph/contracts/GraphContracts.js';
+import { GraphNotFoundError, GraphRateLimitError, GraphAuthenticationError } from '../infrastructure/graph/errors.js';
 import { InfrastructureError, InfrastructureErrorType } from '../domain/glosador/ExecutionSystem/Contracts/InfrastructureError.js';
 import * as crypto from 'crypto';
 
@@ -56,7 +57,7 @@ class MockTransport implements IGraphTransport {
         if (method === 'GET') {
             if (path.endsWith('content')) {
                 const itemPath = path.replace('content', '');
-                if (!this.store.has(itemPath)) throw new GraphApiError(404, 'Not found', false);
+                if (!this.store.has(itemPath)) throw new GraphNotFoundError('Not found');
                 
                 let content = this.store.get(itemPath).content;
                 if (this.incompleteDownload) {
@@ -65,7 +66,7 @@ class MockTransport implements IGraphTransport {
                 
                 return { status: 200, data: content as T, headers: {} };
             }
-            if (!this.store.has(path)) throw new GraphApiError(404, 'Not found', false);
+            if (!this.store.has(path)) throw new GraphNotFoundError('Not found');
             return { status: 200, data: this.store.get(path) as T, headers: {} };
         }
         throw new Error('Method not mocked');
@@ -151,11 +152,11 @@ async function verifyE2EResilience() {
     };
 
     await runTest('429 durante descarga', (t) => {
-        t.injectError = new GraphApiError(429, 'Rate limit', true);
+        t.injectError = new GraphRateLimitError('Rate limit');
     }, 'SUCCESS');
 
     await runTest('503 temporal', (t) => {
-        t.injectError = new GraphApiError(503, 'Service unavailable', true);
+        t.injectError = new GraphRateLimitError('Service unavailable');
     }, 'SUCCESS');
 
     await runTest('Timeout / Cancelación (AbortSignal)', (t) => {
@@ -163,7 +164,7 @@ async function verifyE2EResilience() {
     }, 'ABORT');
 
     await runTest('Token expira durante el flujo (401)', (t) => {
-        t.injectError = new GraphApiError(401, 'Unauthorized', false);
+        t.injectError = new GraphAuthenticationError('Unauthorized');
     }, 'ERROR', InfrastructureErrorType.AUTHENTICATION); // The client invalidates, but in our flow it throws the auth error up to the domain so we can get a new one or fail gracefully. For simplicity, we expect AUTHENTICATION error.
 
     await runTest('Red se cae definitivamente', (t) => {

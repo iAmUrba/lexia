@@ -1,6 +1,7 @@
 import { GraphClient } from '../infrastructure/graph/impl/GraphClient.js';
 import { GraphOneDriveFileSystem } from '../infrastructure/graph/impl/GraphOneDriveFileSystem.js';
 import { IGraphTransport, IGraphAuthProvider, GraphConfiguration, GraphApiError, LexIAEnvironment } from '../infrastructure/graph/contracts/GraphContracts.js';
+import { GraphNotFoundError, GraphRateLimitError, GraphAuthenticationError } from '../infrastructure/graph/errors.js';
 import * as crypto from 'crypto';
 
 class MockAuthProvider implements IGraphAuthProvider {
@@ -17,10 +18,10 @@ class MockTransport implements IGraphTransport {
         if (method === 'GET') {
             if (path.endsWith('content')) {
                 const itemPath = path.replace('content', '');
-                if (!this.store.has(itemPath)) throw new GraphApiError(404, 'Not found', false);
+                if (!this.store.has(itemPath)) throw new GraphNotFoundError('Not found');
                 return { status: 200, data: this.store.get(itemPath).content as T, headers: {} };
             }
-            if (!this.store.has(path)) throw new GraphApiError(404, 'Not found', false);
+            if (!this.store.has(path)) throw new GraphNotFoundError('Not found');
             return { status: 200, data: this.store.get(path) as T, headers: {} };
         }
         throw new Error('Method not mocked');

@@ -1,5 +1,6 @@
 import { GraphClient } from '../infrastructure/graph/impl/GraphClient.js';
 import { IGraphTransport, IGraphAuthProvider, GraphConfiguration, GraphTelemetry, GraphApiError, LexIAEnvironment } from '../infrastructure/graph/contracts/GraphContracts.js';
+import { GraphNotFoundError, GraphRateLimitError, GraphAuthenticationError } from '../infrastructure/graph/errors.js';
 
 class MockAuthProvider implements IGraphAuthProvider {
     public token = 'valid_token';
@@ -97,7 +98,7 @@ async function verifyGraphClient() {
             await client.get('/me');
             throw new Error('Debería fallar');
         } catch (e: any) {
-            if (!(e instanceof GraphApiError) || e.status !== 401) throw e;
+            if (e.name !== 'GraphAuthenticationError') throw e;
         }
         if (auth.invalidatedCount !== 1) throw new Error('Token no fue invalidado');
         if (telemetries.length !== 1) throw new Error('Telemetría falló');
@@ -109,7 +110,7 @@ async function verifyGraphClient() {
             await client.get('/me');
             throw new Error('Debería fallar');
         } catch (e: any) {
-            if (!(e instanceof GraphApiError) || e.status !== 404) throw e;
+            if (e.name !== 'GraphNotFoundError') throw e;
         }
         if (transport.callCount !== 1) throw new Error('Hizo retries para un 404');
     });
