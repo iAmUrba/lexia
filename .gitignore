@@ -18,3 +18,5 @@ node-v20.11.1-darwin-x64/
 lexia_autostart.log
 .env
 .env.*
+
+*.db

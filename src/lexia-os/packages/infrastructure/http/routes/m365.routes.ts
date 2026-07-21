@@ -275,7 +275,12 @@ export default async function m365Routes(app: FastifyInstance) {
       const { EvidenceExtractor } = await import('../../../domain/glosador/EvidenceSystem/EvidenceExtractor.js');
       const { ExpedienteRepository } = await import('../../../domain/glosador/EvidenceSystem/ExpedienteRepository.js');
       const { EvidenceScorer } = await import('../../../domain/glosador/EvidenceSystem/Scoring/EvidenceScorer.js');
-      const { EvidenceResolver } = await import('../../../domain/glosador/EvidenceSystem/EvidenceResolver.js');
+      const { ReviewSession } = await import('../../../domain/glosador/ApprovalWorkflow/ReviewSession.js');
+      const { SqliteDecisionRepository } = await import('../../../domain/glosador/ApprovalWorkflow/DecisionRepository.js');
+      const { ExecutionPlanBuilder } = await import('../../../domain/glosador/ExecutionSystem/ExecutionPlanBuilder.js');
+      const { PreflightValidator } = await import('../../../domain/glosador/ExecutionSystem/PreflightValidator.js');
+      const { DryRunExecutor } = await import('../../../domain/glosador/ExecutionSystem/DryRunExecutor.js');
+      const { DatabaseManager } = await import('../../sqlite/DatabaseManager.js');
 
       const config = { environment: 'SANDBOX', tenantId: 'temp', clientId: 'temp', baseUrl: 'https://graph.microsoft.com', apiVersion: 'v1.0' };
       const authProvider = { getAccessToken: async () => globalAuthTokens!.accessToken, invalidateToken: () => {} };
@@ -317,6 +322,27 @@ export default async function m365Routes(app: FastifyInstance) {
       const report = await resolver.resolve(evidence);
       const duration = Math.round(performance.now() - startTime);
 
+      // Create Proposal
+      const investigationReport = {
+          documentId: fileId,
+          engineVersion: '1.0',
+          startedAt: new Date(startTime).toISOString(),
+          finishedAt: new Date().toISOString(),
+          extractorEvidence: evidence,
+          resolverResult: report
+      };
+      const propuesta = {
+          engineVersion: '1.0',
+          evidenceVersion: '1.0',
+          indiceVersion: '1.0',
+          expedienteId: report.expedienteId || 'unknown',
+          consecutivo: 1, // Dummy consecutivo
+          investigationReportSnapshot: investigationReport
+      };
+
+      const session = new ReviewSession(fileId, 'user_123', propuesta);
+      const proposedDecision = session.approve(); // Generate the event (but don't save it yet)
+
       return reply.send({
         textExtractedLength: text.length,
         textPreview: text.substring(0, 200).replace(/\n/g, ' '),
@@ -330,8 +356,77 @@ export default async function m365Routes(app: FastifyInstance) {
           expedienteId: report.expedienteId,
           rutaExpediente: report.rutaExpediente
         },
+        proposedDecision,
         durationMs: duration
       });
+    } catch (e: any) {
+      app.log.error(e);
+      return reply.code(500).send({ error: e.message });
+    }
+  });
+
+  app.post('/approve-decision', async (request, reply) => {
+    if (!globalAuthTokens) return reply.code(401).send({ error: 'No autenticado' });
+    const decisionEvent = request.body as any;
+    if (!decisionEvent || !decisionEvent.eventId) return reply.code(400).send({ error: 'decisionEvent es requerido' });
+
+    try {
+      const { SqliteDecisionRepository } = await import('../../../domain/glosador/ApprovalWorkflow/DecisionRepository.js');
+      const { ExecutionPlanBuilder } = await import('../../../domain/glosador/ExecutionSystem/ExecutionPlanBuilder.js');
+      const { PreflightValidator } = await import('../../../domain/glosador/ExecutionSystem/PreflightValidator.js');
+      const { DryRunExecutor } = await import('../../../domain/glosador/ExecutionSystem/DryRunExecutor.js');
+      const { GraphClient } = await import('../../graph/impl/GraphClient.js');
+      const { GraphOneDriveFileSystem } = await import('../../graph/impl/GraphOneDriveFileSystem.js');
+      const { DatabaseManager } = await import('../../sqlite/DatabaseManager.js');
+
+      // Initialize DB connection for SQLite
+      const dbManager = DatabaseManager.getInstance();
+      try { dbManager.connect(); } catch (e) {}
+
+      // 1. Persist
+      const decisionRepo = new SqliteDecisionRepository();
+      await decisionRepo.appendEvent(decisionEvent);
+
+      // 2. Build Plan
+      const plan = ExecutionPlanBuilder.buildFromDecision(decisionEvent);
+
+      // 3. Preflight
+      const config = { environment: 'SANDBOX', tenantId: 'temp', clientId: 'temp', baseUrl: 'https://graph.microsoft.com', apiVersion: 'v1.0' };
+      const authProvider = { getAccessToken: async () => globalAuthTokens!.accessToken, invalidateToken: () => {} };
+      const transport = {
+          request: async (method: string, url: string, options: any) => {
+              const response = await fetch(url, { method, headers: options.headers, body: options.body ? JSON.stringify(options.body) : undefined });
+              const isJson = response.headers.get('content-type')?.includes('application/json');
+              const data = isJson ? await response.json() : await response.text();
+              return { status: response.status, headers: response.headers, data };
+          }
+      };
+      
+      const graphClient = new GraphClient(config as any, authProvider as any, transport as any);
+      const meResponse = await graphClient.get<any>('/me/drive');
+      const fsGraph = new GraphOneDriveFileSystem(graphClient, meResponse.id);
+
+      class MockLockManager { async isLocked(id: string) { return false; } }
+      const preflight = new PreflightValidator(fsGraph, new MockLockManager());
+      
+      const excelHash = 'mock_excel_hash';
+      const preflightReport = await preflight.validate(
+          plan,
+          decisionEvent.payload.decision.expedienteId,
+          '/expediente/00_IndiceElectronico.xlsx',
+          excelHash
+      );
+
+      // 4. Dry Run
+      const dryRun = new DryRunExecutor();
+      const dryRunReport = await dryRun.execute(plan, preflightReport);
+
+      return reply.send({
+        success: true,
+        planHash: plan.planHash,
+        dryRunReport
+      });
+
     } catch (e: any) {
       app.log.error(e);
       return reply.code(500).send({ error: e.message });

@@ -28,6 +28,8 @@ export default function GlosadorPage() {
   const [inboxFolderName, setInboxFolderName] = useState<string | null>(null);
   const [processingFileId, setProcessingFileId] = useState<string | null>(null);
   const [processResults, setProcessResults] = useState<Record<string, any>>({});
+  const [approvingFileId, setApprovingFileId] = useState<string | null>(null);
+  const [approvalResults, setApprovalResults] = useState<Record<string, any>>({});
 
   const runDiagnostic = async () => {
     setLoading(true);
@@ -83,6 +85,25 @@ export default function GlosadorPage() {
       setProcessResults(prev => ({ ...prev, [file.id]: { error: 'Falló el procesamiento' } }));
     } finally {
       setProcessingFileId(null);
+    }
+  };
+
+  const approveDecision = async (fileId: string) => {
+    setApprovingFileId(fileId);
+    const decisionEvent = processResults[fileId]?.proposedDecision;
+    try {
+      const res = await fetch('http://localhost:3001/api/m365/approve-decision', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(decisionEvent)
+      });
+      const data = await res.json();
+      setApprovalResults(prev => ({ ...prev, [fileId]: data }));
+    } catch (e) {
+      console.error(e);
+      setApprovalResults(prev => ({ ...prev, [fileId]: { error: 'Falló la aprobación' } }));
+    } finally {
+      setApprovingFileId(null);
     }
   };
 
@@ -229,7 +250,9 @@ export default function GlosadorPage() {
             <div className="grid grid-cols-1 gap-4">
               {inboxFiles.map(file => {
                 const result = processResults[file.id];
+                const approval = approvalResults[file.id];
                 const isProcessing = processingFileId === file.id;
+                const isApproving = approvingFileId === file.id;
 
                 return (
                   <Card key={file.id} className="p-6 bg-slate-900 border border-white/5 shadow-xl transition-all hover:border-indigo-500/30 group">
@@ -290,7 +313,7 @@ export default function GlosadorPage() {
                              <div className="bg-black/30 p-4 rounded-xl border border-white/5">
                                 <div className="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Veredicto (Graph Search)</div>
                                 <div className="text-sm font-medium text-slate-300">
-                                  {result.report.estado === 'ENCONTRADO' ? (
+                                   {result.report.estado === 'ENCONTRADO' ? (
                                     <span className="text-emerald-400 font-bold">🎯 Destino: {result.report.rutaExpediente}</span>
                                   ) : result.report.estado === 'MULTIPLE' ? (
                                     <span className="text-yellow-400 font-bold">⚠️ Múltiples opciones encontradas</span>
@@ -299,6 +322,37 @@ export default function GlosadorPage() {
                                   )}
                                 </div>
                              </div>
+
+                             {result.report.estado === 'ENCONTRADO' && !approval && (
+                                <div className="pt-4">
+                                  <Button 
+                                    onClick={() => approveDecision(file.id)}
+                                    disabled={isApproving}
+                                    className="w-full bg-emerald-600 hover:bg-emerald-500 text-white flex items-center justify-center gap-2 font-bold py-3"
+                                  >
+                                    {isApproving ? <RefreshCw size={18} className="animate-spin" /> : <ShieldCheck size={18} />}
+                                    {isApproving ? 'Guardando...' : 'Aprobar y Archivar'}
+                                  </Button>
+                                </div>
+                             )}
+
+                             {approval && !approval.error && (
+                               <div className="bg-emerald-950/40 p-4 rounded-xl border border-emerald-900/50 mt-4">
+                                  <div className="text-emerald-400 font-bold flex items-center gap-2 mb-2">
+                                    <CheckCircle2 size={18} /> ¡Aprobado Exitosamente!
+                                  </div>
+                                  <div className="text-xs text-slate-300">
+                                    <strong>Plan:</strong> {approval.planHash?.substring(0, 8)}...<br/>
+                                    <strong>DryRun Status:</strong> {approval.dryRunReport?.ready ? 'LISTO' : 'BLOQUEADO'}<br/>
+                                    <strong>Operaciones:</strong> {approval.dryRunReport?.operations?.length || 0}
+                                  </div>
+                               </div>
+                             )}
+                             {approval?.error && (
+                                <div className="mt-4 p-3 bg-red-950/30 text-red-400 text-sm font-medium rounded-lg border border-red-900/30">
+                                  {approval.error}
+                                </div>
+                             )}
                            </div>
                            
                            <div className="lg:col-span-2">
