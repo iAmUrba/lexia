@@ -20,3 +20,5 @@ lexia_autostart.log
 .env.*
 
 *.db
+
+.data/
